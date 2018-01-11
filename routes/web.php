@@ -76,11 +76,11 @@ Route::any('admin/posts/create/{one?}/{two?}/{three?}/{four?}/{five?}',[
 'uses'=>'PostController@create'
 ]);
 
-//POSTS
-Route::get('admin/posts', 'PostController@index')->name('admin.posts.index');
-Route::any('admin/posts/create/{one?}/{two?}/{three?}/{four?}/{five?}',[
-'as'=>'posts/create',
-'uses'=>'PostController@create'
+//PRODUCTS
+Route::get('admin/products', 'ProductController@index')->name('admin.products.index');
+Route::any('admin/products/create/{one?}/{two?}/{three?}/{four?}/{five?}',[
+'as'=>'products/create',
+'uses'=>'ProductController@create'
 ]);
 
 //PROMOTIONS
