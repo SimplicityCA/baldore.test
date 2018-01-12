@@ -10,7 +10,6 @@
     <!-- Styles -->
     {!! Rapyd::styles(true) !!}
     <link href="/css/app.css" rel="stylesheet">
-    <link href="/packages/chosen/chosen.css" rel="stylesheet">
     <!-- Scripts -->
     <script>
         window.Laravel = {!! json_encode([
@@ -18,7 +17,6 @@
         ]) !!};
     </script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 <body>
     <div id="app">
@@ -34,7 +32,7 @@
                     </button>
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('admin/home/') }}">
-                        <img style="width:50%" src="{{ url('/img/superior_logo.png') }}" />
+                        Baldore
                     </a>
                 </div>
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -129,19 +127,25 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="{{ route('logout') }}">
-                                            Salir
-                                        </a>
-                                        
-                                    </li>
-                                </ul>
-                            </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                        Logout
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -156,7 +160,6 @@
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="/packages/chosen/chosen.jquery.js"></script>
     {!! Rapyd::scripts() !!}
     @yield('stylesheets')
     @yield('scripts')
