@@ -22,6 +22,7 @@ class CreateProductsTable extends Migration
             $table->string('title',150);
             $table->string('description');
             $table->string('grade',150);
+            $table->string('slug');
             $table->string('components');
             $table->string('suggestion');
             $table->timestamps();
