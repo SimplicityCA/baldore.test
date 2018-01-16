@@ -13,4 +13,22 @@ class Package extends Model
 	protected $fillable = [
       'description'
   ];
+
+  public function scopeSearch($query, $value)
+  {
+      return $query
+          ->where(
+              function($query) use ($value){
+                  $query->orwhere('description', 'like', '%' . $value . '%');
+              }
+          );
+  }
+
+  protected static function boot()
+    {
+        parent::boot();
+        static::deleting(function ($package) {
+            $package->products()->delete();
+        });
+    }
 }

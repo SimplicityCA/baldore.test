@@ -2,7 +2,7 @@
 @section('content')
 <div class="container">
 	<h1>Empaques</h1>
-	<p> Buscar por nombre </p>
+	<p> Buscar por descripción </p>
 		{!! $filter !!}
 		{!! $grid !!}
 </div>
