@@ -19,6 +19,7 @@ class CreateRecipesTable extends Migration
             $table->foreign('consumer_id')->references('id')->on('consumers');
             $table->integer('product_id')->unsigned();
             $table->foreign('product_id')->references('id')->on('products');
+            $table->string('title');
             $table->string('description');
             $table->string('picture');
             $table->timestamps();

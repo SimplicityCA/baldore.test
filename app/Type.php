@@ -13,4 +13,14 @@ class Type extends Model
 	protected $fillable = [
       'description'
   ];
+
+  public function scopeSearch($query, $value)
+  {
+      return $query
+          ->where(
+              function($query) use ($value){
+                  $query->orwhere('description', 'like', '%' . $value . '%');
+              }
+          );
+  }
 }
