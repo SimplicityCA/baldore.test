@@ -14,4 +14,16 @@ class Draw extends Model
   protected $fillable = [
       'recipe_id'
   ];
+
+  public function scopeSearch($query, $value)
+	  {
+	      return $query
+	          ->where(
+	              function($query) use ($value){
+	                  $query->orWhereHas('recipe', function ($q) use ($value) {
+                                        $q->where('title','like','%'.$value.'%');
+                                    });
+	              }
+	          );
+	  }
 }
