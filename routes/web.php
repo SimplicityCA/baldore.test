@@ -21,11 +21,21 @@ Auth::routes();
 Route::get('admin/home', 'HomeController@index')->name('admin.home');
 
 //ADMIN USERS
-Route::get('admin/users', 'UserController@index')->name('admin.users.index');
-Route::any('admin/users/create/{one?}/{two?}/{three?}/{four?}/{five?}',[
-'as'=>'users/create',
-'uses'=>'UserController@create'
-]);
+Route::get('/admin/users/', 'UserController@index')->name('admin.users.index');
+	Route::get('/admin/users/create', 'UserController@create')->name('admin.users.create');
+	Route::post('/admin/users/create', 'UserController@store');
+	Route::get('/admin/users/show/{id}', [
+		'as'=>'/admin/users/show',
+		'uses'=>'UserController@show'
+	]);
+	Route::get('/admin/users/create/{id}', [
+		'as'=>'/admin/users/edit',
+		'uses'=>'UserController@edit'
+	]);
+	Route::post('/admin/users/create/{id}',[
+		'as'=>'/admin/users/edit',
+		'uses'=>'UserController@update'
+	]);
 
 //CONSUMERS
 Route::get('admin/consumers', 'ConsumerController@index')->name('admin.consumers.index');

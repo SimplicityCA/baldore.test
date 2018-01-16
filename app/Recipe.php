@@ -27,7 +27,7 @@ class Recipe extends Model
       return $query
           ->where(
               function($query) use ($value){
-                  $query->orwhere('description', 'like', '%' . $value . '%')
+                  $query->orwhere('title', 'like', '%' . $value . '%')
                   			->orWhereHas('consumer', function ($q) use ($value) {
                             $q->where('email','like','%'.$value.'%');
                         })
@@ -36,5 +36,14 @@ class Recipe extends Model
                         });
               }
           );
+  }
+
+  protected static function boot()
+  {
+      parent::boot();
+      static::deleting(function ($recipe) {
+        @unlink(public_path().'/img/recipes/'.$recipe->picture);
+        $recipe->draws()->delete();
+      });
   }
 }

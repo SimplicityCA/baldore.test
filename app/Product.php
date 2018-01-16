@@ -40,4 +40,17 @@ class Product extends Model
               }
           );
   }
+
+  protected static function boot()
+  {
+      parent::boot();
+      static::deleting(function ($product) {
+        $pictures = $product->pictures()->get();
+        foreach ($pictures as $picture)  {
+          @unlink(public_path().'/img/products/'.$picture->description);
+        }
+        $product->pictures()->delete();
+        $product->recipes()->delete();
+      });
+  }
 }

@@ -11,7 +11,7 @@ use Validator;
 class PostController extends Controller
 {
 
-	public function __construct()
+		public function __construct()
     {
         $this->middleware('auth');
     }
@@ -20,7 +20,7 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function indexAdmin()
+    public function index()
     {
        $filter = \DataFilter::source(new Post());
         $error = "";

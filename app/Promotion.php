@@ -19,4 +19,12 @@ class Promotion extends Model
               }
           );
   }
+
+  protected static function boot()
+  {
+      parent::boot();
+      static::deleting(function ($promotion) {
+        @unlink(public_path().'/img/promotions/'.$promotion->picture);
+      });
+  }
 }

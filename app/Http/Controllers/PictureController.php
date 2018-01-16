@@ -34,7 +34,7 @@ class PictureController extends Controller
         $grid = DataGrid::source($filter);
         $grid->add('name','Nombre Imagen', true);
         
-        $grid->add('{{ $picture->name }}','Producto', true);
+        $grid->add('{{ $product->title }}','Producto', true);
         $grid->edit('/admin/pictures/create', 'Acciones','show|modify|delete');
         $grid->link('/admin/pictures/create',"Nueva Imagen", "TR");
 
