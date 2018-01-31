@@ -16,9 +16,8 @@
     <link rel="stylesheet" type="text/css" media="all" href="js/vendor/essential-grid/public/assets/css/lightbox.css">
     <link rel="stylesheet" type="text/css" media="all" href="js/vendor/revslider/public/assets/css/settings.css">
     <style id="rs-plugin-settings-inline-css" type="text/css"></style>
-    <script type="text/javascript" src="js/vendor/revslider/public/assets/js/extensions/revolution.extension.navigation.min.js"></script>
-    <script type="text/javascript" src="js/vendor/revslider/public/assets/js/extensions/revolution.extension.layeranimation.min.js"></script>
-    <script type="text/javascript" src="js/vendor/revslider/public/assets/js/extensions/revolution.extension.slideanims.min.js"></script>
+
+
     
     
     
@@ -230,5 +229,8 @@
     <script type='text/javascript' src='js/vendor/tabs.min.js'></script>
     <script type='text/javascript' src='js/vendor/effect.min.js'></script>
     <script type='text/javascript' src='js/vendor/effect-fade.min.js'></script>
+        <script type="text/javascript" src="js/vendor/revslider/public/assets/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script type="text/javascript" src="js/vendor/revslider/public/assets/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script type="text/javascript" src="js/vendor/revslider/public/assets/js/extensions/revolution.extension.slideanims.min.js"></script>
 </body>
 </html>

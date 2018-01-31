@@ -6,10 +6,10 @@
     <div id="rev_slider_1_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container">
         <div id="rev_slider_1_1" class="rev_slider fullwidthabanner" data-version="5.1">
             <ul>    <!-- SLIDE  -->
-                @foreach($pictures as $picture)
-                  <li data-index="rs-1" data-transition="fade" data-slotamount="default"  data-easein="default" data-easeout="default" data-masterspeed="300"  data-thumb="images/{{$picture->path}}"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-description="">
+                @foreach($pictures as $k => $picture)
+                  <li data-index="rs-{{$k}}" data-transition="fade" data-slotamount="default"  data-easein="default" data-easeout="default" data-masterspeed="300"  data-thumb="images/{{$picture->path}}"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-description="">
                       <!-- MAIN IMAGE -->
-                      <img src="images/slide1_wide.jpg"  alt=""  width="1920" height="920" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+                      <img src="images/{{$picture->path}}"  alt=""  width="1920" height="920" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
                       <div class="tp-caption BigWhite   tp-resizeme"
                           id="slide-1-layer-3"
                           data-x="center" data-hoffset=""
@@ -87,7 +87,7 @@
           <section class="spb75rem">
             <div class="container">
               <div class="columns_wrap sc_columns">
-                <div class="column-1_3 sc_column_item odd first">
+                <div class="column-1_2 sc_column_item odd first">
                   <h5 class="sc_title sc_align_left margin_top_small margin_bottom_tiny">Acerca de Nosotros</h5>
                   <h1 class="sc_title sc_align_left margin_top_null margin_bottom_small">Baldore</h1>
                   <h3 class="sc_title sc_title_style_1">
@@ -102,9 +102,9 @@
                     </p>
                   </div>
                   <a href="#" class="sc_button sc_button_square sc_button_style_filled sc_button_size_small margin_top_medium">Quiero conocer más</a>
-                </div><div class="column-1_3 sc_column_item even">
+                </div><div class="column-1_2 sc_column_item even">
                   <figure class="sc_image  sc_image_shape_square margin_top_huge margin_left_small">
-                    <img src="images/home-1-welcome.jpg" alt="" />
+                    <img src="images/nosotros.jpg" alt="" />
                   </figure>
                 </div>
               </div>
@@ -123,7 +123,7 @@
                         <div class="sc_services_item_featured post_featured">
                           <div class="post_thumb" data-image="images/home2_features1.jpg" data-title="Original Drinks">
                             <a class="hover_icon hover_icon_link" href="#">
-                              <img alt="Original Drinks" src="images/capture.PNG">
+                              <img alt="Original Drinks" src="images/aguardiente.png">
                             </a>
                           </div>
                         </div>
@@ -134,7 +134,7 @@
                         <div class="sc_services_item_featured post_featured">
                           <div class="post_thumb" data-image="images/home2_features2.jpg" data-title="Delicious Food">
                             <a class="hover_icon hover_icon_link" href="#">
-                              <img alt="Delicious Food" src="images/capture.PNG">
+                              <img alt="Delicious Food" src="images/aguardiente.png">
                             </a>
                           </div>
                         </div>
@@ -145,7 +145,7 @@
                         <div class="sc_services_item_featured post_featured">
                           <div class="post_thumb" data-image="images/home2_features3.jpg" data-title="Cozy Interior">
                             <a class="hover_icon hover_icon_link" href="#">
-                              <img alt="Cozy Interior" src="images/capture.PNG">
+                              <img alt="Cozy Interior" src="images/aguardiente.png">
                             </a>
                           </div>
                         </div>
