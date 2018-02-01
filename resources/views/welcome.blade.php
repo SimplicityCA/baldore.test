@@ -117,41 +117,21 @@
                 <div class="sc_services sc_services_style_services-3 sc_services_type_images">
                   <h6 class="sc_services_subtitle sc_item_subtitle">Siempre Lo mejor</h6>
                   <h1 class="sc_services_title sc_item_title">Nuestros Productos</h1>
-                  <div class="sc_columns columns_wrap">
+                  <div class="products-home sc_columns columns_wrap">
+                    @foreach($products as $product)
                     <div class="column-1_3 column_padding_bottom">
-                      <div class="sc_services_item sc_services_item_1 odd first">
-                        <div class="sc_services_item_featured post_featured">
-                          <div class="post_thumb" data-image="images/home2_features1.jpg" data-title="Original Drinks">
-                            <a class="hover_icon hover_icon_link" href="#">
-                              <img alt="Original Drinks" src="images/aguardiente.png">
-                            </a>
-                          </div>
-                        </div>
-                        <h2 class="sc_services_item_title">Producto 1</h2>
-                      </div>
-                    </div><div class="column-1_3 column_padding_bottom">
-                      <div class="sc_services_item sc_services_item_2 even">
-                        <div class="sc_services_item_featured post_featured">
-                          <div class="post_thumb" data-image="images/home2_features2.jpg" data-title="Delicious Food">
-                            <a class="hover_icon hover_icon_link" href="#">
-                              <img alt="Delicious Food" src="images/aguardiente.png">
-                            </a>
-                          </div>
-                        </div>
-                        <h2 class="sc_services_item_title">Producto 2</h2>
-                      </div>
-                    </div><div class="column-1_3 column_padding_bottom">
                       <div class="sc_services_item sc_services_item_3 odd">
                         <div class="sc_services_item_featured post_featured">
-                          <div class="post_thumb" data-image="images/home2_features3.jpg" data-title="Cozy Interior">
-                            <a class="hover_icon hover_icon_link" href="#">
-                              <img alt="Cozy Interior" src="images/aguardiente.png">
+                          <div class="post_thumb" data-image="images/products/containers/{{$product->container}}" data-title="{{$product->title}}">
+                            <a class="hover_icon hover_icon_link" href="product/{{$product->slug}}">
+                              <img alt="Cozy Interior" src="images/products/containers/{{$product->container}}">
                             </a>
                           </div>
                         </div>
-                        <h2 class="sc_services_item_title">Producto N</h2>
+                        <h2 class="sc_services_item_title">{{$product->title}}</h2>
                       </div>
                     </div>
+                    @endforeach
                   </div>
                 </div>
               </div>
@@ -162,385 +142,64 @@
             <div class="container">
               <div class="sc_section">
                 <div class="sc_section_inner">
-                  <h5 class="sc_title sc_align_left margin_top_small margin_bottom_tiny">who we are</h5>
-                  <h1 class="sc_title sc_align_left margin_top_null margin_bottom_null">Menu</h1>
+                  <h5 class="sc_title sc_align_left margin_top_small margin_bottom_tiny">Últimas</h5>
+                  <h1 class="sc_title sc_align_left margin_top_null margin_bottom_null">Recetas</h1>
                   <div class="sc_tabs sc_tabs_style_1 margin_top_large- title_position_right" data-active="0">
                     <ul class="sc_tabs_titles">
-                      <li class="sc_tabs_title first">
-                        <a href="#sc_tab_1_1" class="theme_button" id="sc_tab_1_1_tab">scotch & whiskey</a>
-                      </li><li class="sc_tabs_title">
-                        <a href="#sc_tab_1_2" class="theme_button" id="sc_tab_1_2_tab">cocktails</a>
-                      </li><li class="sc_tabs_title">
-                        <a href="#sc_tab_1_3" class="theme_button" id="sc_tab_1_3_tab">Longdrinks</a>
-                      </li><li class="sc_tabs_title last">
-                        <a href="#sc_tab_1_4" class="theme_button" id="sc_tab_1_4_tab">Food</a>
+                      @foreach($products as $k => $product)
+                      <li class="sc_tabs_title">
+                        <a href="#sc_tab_1_{{$k+1}}" class="theme_button" id="sc_tab_1_{{$k+1}}_tab">{{$product->title}}</a>
                       </li>
+                      @endforeach
                     </ul>
-                    <div id="sc_tab_1_1" class="sc_tabs_content odd first">
+                    @foreach($products as $k => $product)
+                    <div id="sc_tab_1_{{$k+1}}" class="sc_tabs_content odd">
                       <div class="sc_section column-1_2">
                         <div class="sc_section_inner">
                           <ul class="sc_list sc_list_style_menu">
-                            <li class="sc_list_item odd first">
-                              <div class="columns_wrap sc_columns">
-                                <div class="column-4_7 sc_column_item odd first">
-                                  <h3 class="sc_title">Balantines</h3>
-                                  <h5 class="sc_title">200 ml</h5>
-                                  <h6 class="sc_title">new</h6>
-                                  <div class="text_column mbn_ne">
-                                    <p>Includes dry vermouth and olive brine shaken with ice and served with an olive</p>
+                            @foreach($product->recipes as $k => $recipe)
+                              @if($k<4)
+                              <li class="sc_list_item odd">
+                                <div class="columns_wrap sc_columns">
+                                  <div class="column-4_7 sc_column_item odd">
+                                    <h3 class="sc_title">{{$recipe->title}}</h3>
+                                    <div class="text_column mbn_ne">
+                                      <p>{{substr($recipe->description, 0, 50)}} ...</p>
+                                    </div>
+                                  </div><div class="column-3_7 sc_column_item odd sc_ar">
+                                    <h2 class="sc_title"><a href="product/{{$product->slug}}">Leer Receta</a></h2>
                                   </div>
-                                </div><div class="column-3_7 sc_column_item odd sc_ar">
-                                  <h2 class="sc_title">$40.00</h2>
                                 </div>
-                              </div>
-                            </li>
-                            <li class="sc_list_item even">
-                              <div class="columns_wrap sc_columns">
-                                <div class="column-4_7 sc_column_item odd first">
-                                  <h3 class="sc_title">Civas Regal</h3>
-                                  <h5 class="sc_title">200 ml</h5>
-                                  <div class="text_column mbn_ne">
-                                    <p>Includes dry vermouth and olive brine shaken with ice and served with an olive</p>
-                                  </div>
-                                </div><div class="column-3_7 sc_column_item odd sc_ar">
-                                  <h2 class="sc_title">$40.00</h2>
-                                </div>
-                              </div>
-                            </li>
-                            <li class="sc_list_item odd">
-                              <div class="columns_wrap sc_columns">
-                                <div class="column-4_7 sc_column_item odd first">
-                                  <h3 class="sc_title">Balantines</h3>
-                                  <h5 class="sc_title">200 ml</h5>
-                                  <div class="text_column mbn_ne">
-                                    <p>Includes dry vermouth and olive brine shaken with ice and served with an olive</p>
-                                  </div>
-                                </div><div class="column-3_7 sc_column_item odd sc_ar">
-                                  <h2 class="sc_title">$40.00</h2>
-                                </div>
-                              </div>
-                            </li>
+                              </li>
+                              @endif
+                            @endforeach
                           </ul>
                         </div>
                       </div><div class="sc_section column-1_2">
                         <div class="sc_section_inner">
                           <ul class="sc_list sc_list_style_menu">
-                            <li class="sc_list_item odd first">
-                              <div class="columns_wrap sc_columns">
-                                <div class="column-4_7 sc_column_item odd first">
-                                  <h3 class="sc_title">Balantines</h3>
-                                  <h5 class="sc_title">200 ml</h5>
-                                  <div class="text_column mbn_ne">
-                                    <p>Includes dry vermouth and olive brine shaken with ice and served with an olive</p>
+                            @foreach($product->recipes as $k => $recipe)
+                              @if($k>4 && $k<7)
+                              <li class="sc_list_item odd">
+                                <div class="columns_wrap sc_columns">
+                                  <div class="column-4_7 sc_column_item odd">
+                                    <h3 class="sc_title">{{$recipe->title}}</h3>
+                                    <div class="text_column mbn_ne">
+                                      <p>{{substr($recipe->description, 0, 50)}} ...</p>
+                                    </div>
+                                  </div><div class="column-3_7 sc_column_item odd sc_ar">
+                                    <h2 class="sc_title"><a href="product/{{$product->slug}}">Leer Receta</h2>
                                   </div>
-                                </div><div class="column-3_7 sc_column_item odd sc_ar">
-                                  <h2 class="sc_title">$40.00</h2>
                                 </div>
-                              </div>
-                            </li>
-                            <li class="sc_list_item even">
-                              <div class="columns_wrap sc_columns">
-                                <div class="column-4_7 sc_column_item odd first">
-                                  <h3 class="sc_title">Civas Regal</h3>
-                                  <h5 class="sc_title">200 ml</h5>
-                                  <div class="text_column mbn_ne">
-                                    <p>Includes dry vermouth and olive brine shaken with ice and served with an olive</p>
-                                  </div>
-                                </div><div class="column-3_7 sc_column_item odd sc_ar">
-                                  <h2 class="sc_title">$40.00</h2>
-                                </div>
-                              </div>
-                            </li>
-                            <li class="sc_list_item odd">
-                              <div class="columns_wrap sc_columns">
-                                <div class="column-4_7 sc_column_item odd first">
-                                  <h3 class="sc_title">Balantines</h3>
-                                  <h5 class="sc_title">200 ml</h5>
-                                  <div class="text_column mbn_ne">
-                                    <p>Includes dry vermouth and olive brine shaken with ice and served with an olive</p>
-                                  </div>
-                                </div><div class="column-3_7 sc_column_item odd sc_ar">
-                                  <h2 class="sc_title">$40.00</h2>
-                                </div>
-                              </div>
-                            </li>
+                              </li>
+                              @endif
+                            @endforeach
+
                           </ul>
                         </div>
                       </div>
                     </div>
-                    <div id="sc_tab_1_2" class="sc_tabs_content even">
-                      <div class="sc_section column-1_2">
-                        <div class="sc_section_inner">
-                          <ul class="sc_list sc_list_style_menu">
-                            <li class="sc_list_item odd first">
-                              <div class="columns_wrap sc_columns">
-                                <div class="column-4_7 sc_column_item odd first">
-                                  <h3 class="sc_title">Balantines</h3>
-                                  <h5 class="sc_title">200 ml</h5>
-                                  <div class="text_column mbn_ne">
-                                    <p>Includes dry vermouth and olive brine shaken with ice and served with an olive</p>
-                                  </div>
-                                </div><div class="column-3_7 sc_column_item odd sc_ar">
-                                  <h2 class="sc_title">$40.00</h2>
-                                </div>
-                              </div>
-                            </li>
-                            <li class="sc_list_item even">
-                              <div class="columns_wrap sc_columns">
-                                <div class="column-4_7 sc_column_item odd first">
-                                  <h3 class="sc_title">Civas Regal</h3>
-                                  <h5 class="sc_title">200 ml</h5>
-                                  <div class="text_column mbn_ne">
-                                    <p>Includes dry vermouth and olive brine shaken with ice and served with an olive</p>
-                                  </div>
-                                </div><div class="column-3_7 sc_column_item odd sc_ar">
-                                  <h2 class="sc_title">$40.00</h2>
-                                </div>
-                              </div>
-                            </li>
-                            <li class="sc_list_item odd">
-                              <div class="columns_wrap sc_columns">
-                                <div class="column-4_7 sc_column_item odd first">
-                                  <h3 class="sc_title">Balantines</h3>
-                                  <h5 class="sc_title">200 ml</h5>
-                                  <div class="text_column mbn_ne">
-                                    <p>Includes dry vermouth and olive brine shaken with ice and served with an olive</p>
-                                  </div>
-                                </div><div class="column-3_7 sc_column_item odd sc_ar">
-                                  <h2 class="sc_title">$40.00</h2>
-                                </div>
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                      </div><div class="sc_section column-1_2">
-                        <div class="sc_section_inner">
-                          <ul class="sc_list sc_list_style_menu">
-                            <li class="sc_list_item odd first">
-                              <div class="columns_wrap sc_columns">
-                                <div class="column-4_7 sc_column_item odd first">
-                                  <h3 class="sc_title">Balantines</h3>
-                                  <h5 class="sc_title">200 ml</h5>
-                                  <div class="text_column mbn_ne">
-                                    <p>Includes dry vermouth and olive brine shaken with ice and served with an olive</p>
-                                  </div>
-                                </div><div class="column-3_7 sc_column_item odd sc_ar">
-                                  <h2 class="sc_title">$40.00</h2>
-                                </div>
-                              </div>
-                            </li>
-                            <li class="sc_list_item even">
-                              <div class="columns_wrap sc_columns">
-                                <div class="column-4_7 sc_column_item odd first">
-                                  <h3 class="sc_title">Civas Regal</h3>
-                                  <h5 class="sc_title">200 ml</h5>
-                                  <div class="text_column mbn_ne">
-                                    <p>Includes dry vermouth and olive brine shaken with ice and served with an olive</p>
-                                  </div>
-                                </div><div class="column-3_7 sc_column_item odd sc_ar">
-                                  <h2 class="sc_title">$40.00</h2>
-                                </div>
-                              </div>
-                            </li>
-                            <li class="sc_list_item odd">
-                              <div class="columns_wrap sc_columns">
-                                <div class="column-4_7 sc_column_item odd first">
-                                  <h3 class="sc_title">Balantines</h3>
-                                  <h5 class="sc_title">200 ml</h5>
-                                  <div class="text_column mbn_ne">
-                                    <p>Includes dry vermouth and olive brine shaken with ice and served with an olive</p>
-                                  </div>
-                                </div><div class="column-3_7 sc_column_item odd sc_ar">
-                                  <h2 class="sc_title">$40.00</h2>
-                                </div>
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div id="sc_tab_1_3" class="sc_tabs_content odd">
-                      <div class="sc_section column-1_2">
-                        <div class="sc_section_inner">
-                          <ul class="sc_list sc_list_style_menu">
-                            <li class="sc_list_item odd first">
-                              <div class="columns_wrap sc_columns">
-                                <div class="column-4_7 sc_column_item odd first">
-                                  <h3 class="sc_title">Balantines</h3>
-                                  <h5 class="sc_title">200 ml</h5>
-                                  <div class="text_column mbn_ne">
-                                    <p>Includes dry vermouth and olive brine shaken with ice and served with an olive</p>
-                                  </div>
-                                </div><div class="column-3_7 sc_column_item odd sc_ar">
-                                  <h2 class="sc_title">$40.00</h2>
-                                </div>
-                              </div>
-                            </li>
-                            <li class="sc_list_item even">
-                              <div class="columns_wrap sc_columns">
-                                <div class="column-4_7 sc_column_item odd first">
-                                  <h3 class="sc_title">Civas Regal</h3>
-                                  <h5 class="sc_title">200 ml</h5>
-                                  <div class="text_column mbn_ne">
-                                    <p>Includes dry vermouth and olive brine shaken with ice and served with an olive</p>
-                                  </div>
-                                </div><div class="column-3_7 sc_column_item odd sc_ar">
-                                  <h2 class="sc_title">$40.00</h2>
-                                </div>
-                              </div>
-                            </li>
-                            <li class="sc_list_item odd">
-                              <div class="columns_wrap sc_columns">
-                                <div class="column-4_7 sc_column_item odd first">
-                                  <h3 class="sc_title">Balantines</h3>
-                                  <h5 class="sc_title">200 ml</h5>
-                                  <div class="text_column mbn_ne">
-                                    <p>Includes dry vermouth and olive brine shaken with ice and served with an olive</p>
-                                  </div>
-                                </div><div class="column-3_7 sc_column_item odd sc_ar">
-                                  <h2 class="sc_title">$40.00</h2>
-                                </div>
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                      </div><div class="sc_section column-1_2">
-                        <div class="sc_section_inner">
-                          <ul class="sc_list sc_list_style_menu">
-                            <li class="sc_list_item odd first">
-                              <div class="columns_wrap sc_columns">
-                                <div class="column-4_7 sc_column_item odd first">
-                                  <h3 class="sc_title">Balantines</h3>
-                                  <h5 class="sc_title">200 ml</h5>
-                                  <div class="text_column mbn_ne">
-                                    <p>Includes dry vermouth and olive brine shaken with ice and served with an olive</p>
-                                  </div>
-                                </div><div class="column-3_7 sc_column_item odd sc_ar">
-                                  <h2 class="sc_title">$40.00</h2>
-                                </div>
-                              </div>
-                            </li>
-                            <li class="sc_list_item even">
-                              <div class="columns_wrap sc_columns">
-                                <div class="column-4_7 sc_column_item odd first">
-                                  <h3 class="sc_title">Civas Regal</h3>
-                                  <h5 class="sc_title">200 ml</h5>
-                                  <div class="text_column mbn_ne">
-                                    <p>Includes dry vermouth and olive brine shaken with ice and served with an olive</p>
-                                  </div>
-                                </div><div class="column-3_7 sc_column_item odd sc_ar">
-                                  <h2 class="sc_title">$40.00</h2>
-                                </div>
-                              </div>
-                            </li>
-                            <li class="sc_list_item odd">
-                              <div class="columns_wrap sc_columns">
-                                <div class="column-4_7 sc_column_item odd first">
-                                  <h3 class="sc_title">Balantines</h3>
-                                  <h5 class="sc_title">200 ml</h5>
-                                  <div class="text_column mbn_ne">
-                                    <p>Includes dry vermouth and olive brine shaken with ice and served with an olive</p>
-                                  </div>
-                                </div><div class="column-3_7 sc_column_item odd sc_ar">
-                                  <h2 class="sc_title">$40.00</h2>
-                                </div>
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div id="sc_tab_1_4" class="sc_tabs_content even">
-                      <div class="sc_section column-1_2">
-                        <div class="sc_section_inner">
-                          <ul class="sc_list sc_list_style_menu">
-                            <li class="sc_list_item odd first">
-                              <div class="columns_wrap sc_columns">
-                                <div class="column-4_7 sc_column_item odd first">
-                                  <h3 class="sc_title">Balantines</h3>
-                                  <h5 class="sc_title">200 ml</h5>
-                                  <div class="text_column mbn_ne">
-                                    <p>Includes dry vermouth and olive brine shaken with ice and served with an olive</p>
-                                  </div>
-                                </div><div class="column-3_7 sc_column_item odd sc_ar">
-                                  <h2 class="sc_title">$40.00</h2>
-                                </div>
-                              </div>
-                            </li>
-                            <li class="sc_list_item even">
-                              <div class="columns_wrap sc_columns">
-                                <div class="column-4_7 sc_column_item odd first">
-                                  <h3 class="sc_title">Civas Regal</h3>
-                                  <h5 class="sc_title">200 ml</h5>
-                                  <div class="text_column mbn_ne">
-                                    <p>Includes dry vermouth and olive brine shaken with ice and served with an olive</p>
-                                  </div>
-                                </div><div class="column-3_7 sc_column_item odd sc_ar">
-                                  <h2 class="sc_title">$40.00</h2>
-                                </div>
-                              </div>
-                            </li>
-                            <li class="sc_list_item odd">
-                              <div class="columns_wrap sc_columns">
-                                <div class="column-4_7 sc_column_item odd first">
-                                  <h3 class="sc_title">Balantines</h3>
-                                  <h5 class="sc_title">200 ml</h5>
-                                  <div class="text_column mbn_ne">
-                                    <p>Includes dry vermouth and olive brine shaken with ice and served with an olive</p>
-                                  </div>
-                                </div><div class="column-3_7 sc_column_item odd sc_ar">
-                                  <h2 class="sc_title">$40.00</h2>
-                                </div>
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                      </div><div class="sc_section column-1_2">
-                        <div class="sc_section_inner">
-                          <ul class="sc_list sc_list_style_menu">
-                            <li class="sc_list_item odd first">
-                              <div class="columns_wrap sc_columns">
-                                <div class="column-4_7 sc_column_item odd first">
-                                  <h3 class="sc_title">Balantines</h3>
-                                  <h5 class="sc_title">200 ml</h5>
-                                  <div class="text_column mbn_ne">
-                                    <p>Includes dry vermouth and olive brine shaken with ice and served with an olive</p>
-                                  </div>
-                                </div><div class="column-3_7 sc_column_item odd sc_ar">
-                                  <h2 class="sc_title">$40.00</h2>
-                                </div>
-                              </div>
-                            </li>
-                            <li class="sc_list_item even">
-                              <div class="columns_wrap sc_columns">
-                                <div class="column-4_7 sc_column_item odd first">
-                                  <h3 class="sc_title">Civas Regal</h3>
-                                  <h5 class="sc_title">200 ml</h5>
-                                  <div class="text_column mbn_ne">
-                                    <p>Includes dry vermouth and olive brine shaken with ice and served with an olive</p>
-                                  </div>
-                                </div><div class="column-3_7 sc_column_item odd sc_ar">
-                                  <h2 class="sc_title">$40.00</h2>
-                                </div>
-                              </div>
-                            </li>
-                            <li class="sc_list_item odd">
-                              <div class="columns_wrap sc_columns">
-                                <div class="column-4_7 sc_column_item odd first">
-                                  <h3 class="sc_title">Balantines</h3>
-                                  <h5 class="sc_title">200 ml</h5>
-                                  <div class="text_column mbn_ne">
-                                    <p>Includes dry vermouth and olive brine shaken with ice and served with an olive</p>
-                                  </div>
-                                </div><div class="column-3_7 sc_column_item odd sc_ar">
-                                  <h2 class="sc_title">$40.00</h2>
-                                </div>
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
+                    @endforeach
                   </div>
                 </div>
               </div>
@@ -551,14 +210,7 @@
             <div class="container">
               <div class="sc_section margin_top_small alignleft">
                 <div class="sc_section_inner">
-                  <a href="#" class="sc_button sc_button_square sc_button_style_filled sc_button_size_small">view more</a>
-                </div>
-              </div>
-              <div class="sc_section alignright">
-                <div class="sc_section_inner">
-                  <figure class="sc_image  sc_image_shape_square margin_top_large- margin_bottom_medium">
-                    <img src="images/lemon.png" alt="" />
-                  </figure>
+                  <a href="#" class="sc_button sc_button_square sc_button_style_filled sc_button_size_small">Ver Más</a>
                 </div>
               </div>
             </div>
@@ -570,8 +222,8 @@
                 <div class="sc_section_inner">
                   <div class="sc_section_overlay">
                     <div class="sc_section_content padding_on">
-                      <h1 class="sc_title margin_top_medium margin_bottom_null white">Happy Hours</h1>
-                      <h3 class="sc_title sc_title_style_3 margin_top_tiny-">Daily at 5pm till 7pm</h3>
+                      <h1 class="sc_title margin_top_medium margin_bottom_null white">Nuestra Calidad</h1>
+                      <h3 class="sc_title sc_title_style_3 margin_top_tiny-">La satisfación total de nuestros clientes</h3>
                     </div>
                   </div>
                 </div>
@@ -693,41 +345,23 @@
                   <div class="sc_section_overlay">
                     <div class="sc_section_content padding_on phn">
                       <div class="sc_content content_wrap">
-                        <h6 class="sc_title sc_align_center margin_top_larges margin_bottom_tiny">get involved!</h6>
-                        <h1 class="sc_title sc_align_center margin_top_null margin_bottom_large white">upcoming events</h1>
+                        <h6 class="sc_title sc_align_center margin_top_larges margin_bottom_tiny">Participa !</h6>
+                        <h1 class="sc_title sc_align_center margin_top_null margin_bottom_large white">Últimas Promociones</h1>
                         <div class="sc_events_wrap">
                           <div class="sc_events sc_events_style_events-2  margin_bottom_larges">
-                            <div class="sc_columns columns_wrap">   
-                              <div class="sc_events_item sc_events_item_1 odd first">
-                                <span class="sc_events_item_date">
-                                  <span class="sc_events_item_day">09</span>
-                                  <span class="sc_events_item_month">May</span>
-                                </span><h3 class="sc_events_item_title">
-                                  <a href="#">The Five Points of Gospel Truth</a>
-                                </h3><span class="sc_events_item_time">8:00 am</span><span class="sc_events_item_details">
-                                  <a class="sc_button sc_button_square sc_button_style_filled style_color_light" href="#">details</a>
-                                </span>
-                              </div>
-                              <div class="sc_events_item sc_events_item_2 even">
-                                <span class="sc_events_item_date">
-                                  <span class="sc_events_item_day">05</span>
-                                  <span class="sc_events_item_month">Jul</span>
-                                </span><h3 class="sc_events_item_title">
-                                  <a href="#">Irish Pub Weekend</a>
-                                </h3><span class="sc_events_item_time">8:00 am</span><span class="sc_events_item_details">
-                                  <a class="sc_button sc_button_square sc_button_style_filled style_color_light" href="#">details</a>
-                                </span>
-                              </div>
-                              <div class="sc_events_item sc_events_item_3 odd">
-                                <span class="sc_events_item_date">
-                                  <span class="sc_events_item_day">02</span>
-                                  <span class="sc_events_item_month">Aug</span>
-                                </span><h3 class="sc_events_item_title">
-                                  <a href="#">Old-Fashioned Party</a>
-                                </h3><span class="sc_events_item_time">8:00 am</span><span class="sc_events_item_details">
-                                  <a class="sc_button sc_button_square sc_button_style_filled style_color_light" href="#">details</a>
-                                </span>
-                              </div>
+                            <div class="sc_columns columns_wrap">
+                              @foreach($promotions as $promotion)
+                                <div class="sc_events_item sc_events_item_1 odd first">
+                                  <span class="sc_events_item_date">
+                                    <span class="sc_events_item_day">{{date('d',$promotion->creation_date)}}</span>
+                                    <span class="sc_events_item_month">{{date('F',$promotion->creation_date)}}</span>
+                                  </span><h3 class="sc_events_item_title">
+                                    <a href="#">{{$promotion->title}}</a>
+                                  </h3><span class="sc_events_item_time">{{date('H:i:s',$promotion->creation_date)}}</span><span class="sc_events_item_details">
+                                    <a class="sc_button sc_button_square sc_button_style_filled style_color_light" href="#">Ver Más</a>
+                                  </span>
+                                </div>
+                              @endforeach
                             </div>
                           </div>
                         </div>
@@ -738,6 +372,7 @@
               </div>
             </div>
           </section>
+
         </div>
       </article>
     </div>

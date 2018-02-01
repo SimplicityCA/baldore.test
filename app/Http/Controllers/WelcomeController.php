@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\HomePicture;
+use App\Product;
+use App\Promotion;
 class WelcomeController extends Controller
 {
     /**
@@ -20,6 +22,8 @@ class WelcomeController extends Controller
     public function index()
     {
         $pictures=HomePicture::all();
-        return view('welcome', compact('pictures'));
+        $products=Product::where('active',1)->get();
+        $promotions=Promotion::orderBy('created_at', 'desc')->get();
+        return view('welcome', compact('pictures','products','promotions'));
     }
 }

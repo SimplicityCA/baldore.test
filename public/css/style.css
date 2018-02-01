@@ -5404,7 +5404,10 @@ footer.twitter_wrap .sc_section_overlay {
 .hover_icon {
     position:relative;
     display:block;
-    background: #000000;
+    /*background: #000000;*/
+}
+.hover_icon:hover{
+	background-color: rgba(0, 0, 0, 0.5);
 }
 .hover_iconed a:before,
 .hover_icon:before {
@@ -6760,4 +6763,7 @@ ul[class*="woocommerce-"] li:before {
 }
 .woocommerce-checkout #payment ul.payment_methods li img {
     margin-right: 1em;
+}
+.products-home{
+	display: inline-table;
 }
