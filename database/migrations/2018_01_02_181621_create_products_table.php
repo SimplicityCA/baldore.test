@@ -23,6 +23,7 @@ class CreateProductsTable extends Migration
             $table->string('description');
             $table->string('grade',150);
             $table->string('slug');
+            $table->integer('active',1);
             $table->string('components');
             $table->string('suggestion');
             $table->timestamps();

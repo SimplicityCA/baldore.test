@@ -29,11 +29,11 @@
     <link rel="stylesheet" type="text/css" media="all" href="css/skin.css" />
     <link rel="stylesheet" type="text/css" media="all" href="css/responsive.css" />
 </head>
-<body class="home page body_filled article_style_stretch scheme_original top_panel_over sidebar_hide">
+<body class="page body_filled article_style_stretch scheme_original top_panel_above sidebar_hide">
     <div id="app" class="body_wrap header_style_8">
         <div class="page_wrap">
             <div class="top_panel_fixed_wrap"></div>
-            <header class="top_panel_wrap top_panel_style_8 scheme_original">
+            <header class="top_panel_wrap top_panel_style_8 scheme_original header_posts">
                 <div class="top_panel_wrap_inner top_panel_inner_style_8 top_panel_position_over">
                     <div class="top_panel_middle" >
                         <div class="content_wrap">

@@ -13,7 +13,30 @@
 
 Route::get('/', 'WelcomeController@index')->name('index');
 Auth::routes();
-
+Route::get('/posts', [
+	'as'=>'/posts',
+	'uses'=>'WelcomeController@posts'
+]);
+Route::get('/posts/show/{slug}', [
+	'as'=>'/posts/show',
+	'uses'=>'WelcomeController@showposts'
+]);
+Route::get('/promotions', [
+	'as'=>'/promotions',
+	'uses'=>'WelcomeController@promotions'
+]);
+Route::get('/promotions/show/{id}', [
+	'as'=>'/promotions/show',
+	'uses'=>'WelcomeController@showpromotions'
+]);
+Route::get('/products/{slug}', [
+	'as'=>'/products',
+	'uses'=>'ProductController@show'
+]);
+Route::get('/content/{id}', [
+	'as'=>'/content',
+	'uses'=>'WelcomeController@content'
+]);
 //ADMIN
 Route::get('admin/home', 'HomeController@index')->name('admin.home');
 

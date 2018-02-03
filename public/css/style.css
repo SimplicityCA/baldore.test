@@ -6767,3 +6767,8 @@ ul[class*="woocommerce-"] li:before {
 .products-home{
 	display: inline-table;
 }
+.header_posts{
+	background-image: url(../images/home1_bg_offers.jpg) !important;
+	/*background-image: url(../images/home1_bg_happy_hours-1.jpg) !important;*/
+	
+}

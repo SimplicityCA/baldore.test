@@ -215,7 +215,7 @@
               </div>
             </div>
           </section>
-
+{{-- 
           <section class="bg_image_13 spv1rem">
             <div class="container">
               <div class="sc_section section_style_thick aligncenter margin_top_no margin_bottom_no bg_image_12">
@@ -229,9 +229,9 @@
                 </div>
               </div>
             </div>
-          </section>
+          </section> --}}
 
-          <section class="spt72rem spb5rem">
+{{--           <section class="spt72rem spb5rem">
             <div class="container">
               <div class="sc_team_wrap">
                 <div class="sc_team sc_team_style_team-3">
@@ -336,7 +336,7 @@
                 </div>
               </div>
             </div>
-          </section>
+          </section> --}}
 
           <section class="bg_image_14">
             <div class="container">

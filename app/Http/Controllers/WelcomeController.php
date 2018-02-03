@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\HomePicture;
 use App\Product;
+use App\Post;
 use App\Promotion;
 class WelcomeController extends Controller
 {
@@ -25,5 +26,11 @@ class WelcomeController extends Controller
         $products=Product::where('active',1)->get();
         $promotions=Promotion::orderBy('created_at', 'desc')->get();
         return view('welcome', compact('pictures','products','promotions'));
+    }
+
+    public function posts(){
+
+        $posts=Post::all();
+        return view('posts', compact('posts'));
     }
 }
