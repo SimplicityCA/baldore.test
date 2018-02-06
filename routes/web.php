@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'WelcomeController@index')->name('index');
+
 Auth::routes();
 Route::get('/posts', [
 	'as'=>'/posts',
@@ -24,6 +25,10 @@ Route::get('/posts/show/{slug}', [
 Route::get('/promotions', [
 	'as'=>'/promotions',
 	'uses'=>'WelcomeController@promotions'
+]);
+Route::get('/contact', [
+	'as'=>'/contact',
+	'uses'=>'WelcomeController@contact'
 ]);
 Route::get('/promotions/show/{id}', [
 	'as'=>'/promotions/show',

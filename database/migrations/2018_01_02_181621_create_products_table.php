@@ -26,6 +26,8 @@ class CreateProductsTable extends Migration
             $table->integer('active',1);
             $table->string('components');
             $table->string('suggestion');
+            $table->string('container');
+            $table->string('background');
             $table->timestamps();
         });
     }

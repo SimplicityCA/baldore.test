@@ -3,9 +3,9 @@
 <?php 
 use App\Product;
 $products=Product::where('active',1)->get();
-$background='../images/home1_bg_offers.jpg';
+$background='/images/home1_bg_offers.jpg';
 if(isset($background_product)){
-  $background='../images/products/backgrounds/'.$background_product;
+  $background='/images/products/backgrounds/'.$background_product;
 }
  ?>
 <head>

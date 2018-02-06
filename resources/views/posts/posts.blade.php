@@ -31,7 +31,7 @@
                         </div>
                         <div class="post_featured">
                           <div class="post_thumb" data-image="images/image-1.jpg" data-title="Tough? Try Not Drinking for a Month">
-                            <a class="hover_icon hover_icon_link" href="#">
+                            <a class="hover_icon hover_icon_link" href="/posts/show/{{$post->slug}}">
                               <img alt="{{$post->creation_date}}" src="images/posts/{{$post->picture}}">
                             </a>
                           </div>
@@ -39,7 +39,7 @@
                         <div class="post_content isotope_item_content">
                           <div class="post_descr">
                             <p>{{$post->subtitle}}...</p>
-                            <a href="#" class="sc_button sc_button_square sc_button_style_filled sc_button_size_medium">Leer Más</a>
+                            <a href="/posts/show/{{$post->slug}}" class="sc_button sc_button_square sc_button_style_filled sc_button_size_medium">Leer Más</a>
                           </div>
                         </div>
                       </article>
