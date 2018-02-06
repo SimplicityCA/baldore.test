@@ -26,14 +26,13 @@
 												</span>
 											</div>			
 											<section class="post_featured">
-												<div class="post_thumb" data-image="/images/posts/{{$post->picture}}" data-title="{{$post->title}}">
-													<a class="hover_icon hover_icon_view" href="/images/posts/{{$post->picture}}" title="{{$post->title}}">
-														<img alt="Image Post" src="/images/posts/{{$post->picture}}">
-													</a>
-												</div>
+												
+													
+														<img alt="Image Post" src="/images/recipes/{{$post->picture}}">
+													
 											</section>
 											<section class="post_content">
-												{!! $post->body !!}
+												{!! $post->description !!}
 											</section>
 											<section class="related_wrap related_wrap_empty"></section>
 										</article>

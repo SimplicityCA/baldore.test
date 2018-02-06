@@ -30,6 +30,9 @@ class WelcomeController extends Controller
     public function contact(){
        return view('contacts'); 
     }
+    public function about(){
+       return view('about'); 
+    }
     public function posts(){
 
         $posts=Post::all();

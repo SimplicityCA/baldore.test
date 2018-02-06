@@ -25,10 +25,18 @@
                     </div><div class="column-3_5 sc_column_item sc_column_item_3 odd after_span_2">
                       <div class="sc_section margin_left_large">
                         <div class="sc_section_inner">
-                          <h3 class="sc_title margin_bottom_null mtn035em">{{$product->title}}</h3>
+                          <h2 class="sc_title margin_bottom_null mtn035em">{{$product->title}}</h2>
                           <div class="mbn_ne">
                             <p>{{$product->type->description}}</p>
                             <p>{{$product->description}}</p>
+                          </div>
+                          <h3 class="sc_title margin_bottom_null mtn035em">Componentes:</h3>
+                          <div class="mbn_ne">
+                            <p>{{$product->components}}</p>
+                          </div>
+                          <h3 class="sc_title margin_bottom_null mtn035em">Sugerencia:</h3>
+                          <div class="mbn_ne">
+                            <p>{{$product->suggestion}}</p>
                           </div>
                           <div class="sc_skills sc_skills_bar sc_skills_horizontal mw480 mt16rem" data-type="bar" data-caption="Skills" data-dir="horizontal">
                             <div class="sc_skills_info">
@@ -139,7 +147,7 @@
                                       <p>{{substr($recipe->description, 0, 50)}} ...</p>
                                     </div>
                                   </div><div class="column-3_7 sc_column_item odd sc_ar">
-                                    <h2 class="sc_title"><a href="product/{{$product->slug}}">Leer Receta</a></h2>
+                                    <h2 class="sc_title"><a href="/recipe/{{$recipe->id}}">Leer Receta</a></h2>
                                   </div>
                                 </div>
                               </li>
@@ -160,7 +168,7 @@
                                       <p>{{substr($recipe->description, 0, 50)}} ...</p>
                                     </div>
                                   </div><div class="column-3_7 sc_column_item odd sc_ar">
-                                    <h2 class="sc_title"><a href="product/{{$product->slug}}">Leer Receta</h2>
+                                    <h2 class="sc_title"><a href="/recipe/{{$recipe->id}}">Leer Receta</h2>
                                   </div>
                                 </div>
                               </li>

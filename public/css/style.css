@@ -5903,7 +5903,8 @@ h1 .wpb_text_column p, h2 .wpb_text_column p, h3 .wpb_text_column p, h4 .wpb_tex
 }
 
 .bg_image_15{
-	background-image: url(../images/emailer.jpg) !important;
+	background-image: url(../images/emailer.png) !important;
+	background-repeat: no-repeat;
 }
 
 .bg_image_16{

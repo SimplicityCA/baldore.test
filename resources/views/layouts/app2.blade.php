@@ -80,7 +80,7 @@ if(isset($background_product)){
                     <a href="#">Home</a>
                   </li>
                   <li class="menu-item">
-                    <a href="#">Empresa</a>
+                    <a href="/about">Empresa</a>
                   </li>
                   <li class="menu-item menu-item-has-children ">
                     <a href="#">Productos</a>
@@ -123,7 +123,7 @@ if(isset($background_product)){
                         <a href="/">Home</a>
                       </li>
                       <li class="menu-item">
-                        <a href="#">Empresa</a>
+                        <a href="/about">Empresa</a>
                       </li>
                       <li class="menu-item menu-item-has-children ">
                         <a href="#">Productos</a>

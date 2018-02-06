@@ -91,17 +91,14 @@
                   <h5 class="sc_title sc_align_left margin_top_small margin_bottom_tiny">Acerca de Nosotros</h5>
                   <h1 class="sc_title sc_align_left margin_top_null margin_bottom_small">Baldore</h1>
                   <h3 class="sc_title sc_title_style_1">
-                    Texto de prueba<br />
-                    by Vintage and Contemporary<br />
-                    Recipes
+                    "Satisfacción total de los clientes internos y externos de Baldoré, con productos y servicios innovadores y competitivos, con un compromiso personal para el mejoramiento de los procesos, manteniendo márgenes de rentabilidad consistentes, que nos permitan reinvertir en ingeniería y tecnología de punta"
                   </h3>
                   <div class="mbn_ne">
                     <p>
-                      Texto de prueba<br />
-                      es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de <br>relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a<br>
+                      Hemos implementado su Sistema de Gestión de Calidad o SGC Baldoré, el cual incluye los sistemas de Mejoramiento Continuo de la Producción y Buenas Prácticas de Manufactura. El SGC Baldoré permite entregarle productos y servicios acorde a nuestra política de calidad, Valores y Políticas.
                     </p>
                   </div>
-                  <a href="#" class="sc_button sc_button_square sc_button_style_filled sc_button_size_small margin_top_medium">Quiero conocer más</a>
+                  <a href="/about" class="sc_button sc_button_square sc_button_style_filled sc_button_size_small margin_top_medium">Quiero conocer más</a>
                 </div><div class="column-1_2 sc_column_item even">
                   <figure class="sc_image  sc_image_shape_square margin_top_huge margin_left_small">
                     <img src="images/nosotros.jpg" alt="" />
@@ -167,7 +164,7 @@
                                       <p>{{substr($recipe->description, 0, 50)}} ...</p>
                                     </div>
                                   </div><div class="column-3_7 sc_column_item odd sc_ar">
-                                    <h2 class="sc_title"><a href="product/{{$product->slug}}">Leer Receta</a></h2>
+                                    <h2 class="sc_title"><a href="recipe/{{$recipe->id}}">Leer Receta</a></h2>
                                   </div>
                                 </div>
                               </li>
@@ -188,7 +185,7 @@
                                       <p>{{substr($recipe->description, 0, 50)}} ...</p>
                                     </div>
                                   </div><div class="column-3_7 sc_column_item odd sc_ar">
-                                    <h2 class="sc_title"><a href="product/{{$product->slug}}">Leer Receta</h2>
+                                    <h2 class="sc_title"><a href="recipe/{{$recipe->id}}">Leer Receta</h2>
                                   </div>
                                 </div>
                               </li>
@@ -215,128 +212,6 @@
               </div>
             </div>
           </section>
-{{-- 
-          <section class="bg_image_13 spv1rem">
-            <div class="container">
-              <div class="sc_section section_style_thick aligncenter margin_top_no margin_bottom_no bg_image_12">
-                <div class="sc_section_inner">
-                  <div class="sc_section_overlay">
-                    <div class="sc_section_content padding_on">
-                      <h1 class="sc_title margin_top_medium margin_bottom_null white">Nuestra Calidad</h1>
-                      <h3 class="sc_title sc_title_style_3 margin_top_tiny-">La satisfación total de nuestros clientes</h3>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section> --}}
-
-{{--           <section class="spt72rem spb5rem">
-            <div class="container">
-              <div class="sc_team_wrap">
-                <div class="sc_team sc_team_style_team-3">
-                  <h5 class="sc_team_subtitle sc_item_subtitle">Meet The Team</h5>
-                  <h1 class="sc_team_title sc_item_title">Bartenders</h1>
-                  <div class="sc_columns columns_wrap">
-                    <div class="column-1_3 column_padding_bottom">
-                      <div class="sc_team_item sc_team_item_1 odd first">
-                        <div class="sc_team_item_avatar">
-                          <img alt="Daniel Green" src="images/team2-740x856.jpg">
-                          <div class="sc_team_item_hover">
-                            <div class="sc_team_item_socials">
-                              <div class="sc_socials sc_socials_type_icons sc_socials_shape_square sc_socials_size_tiny">
-                                <div class="sc_socials_item">
-                                  <a href="#" target="_blank" class="social_icons social_facebook">
-                                    <span class="icon-facebook"></span>
-                                  </a>
-                                </div><div class="sc_socials_item">
-                                  <a href="#" target="_blank" class="social_icons social_instagramm">
-                                    <span class="icon-instagramm"></span>
-                                  </a>
-                                </div><div class="sc_socials_item">
-                                  <a href="#" target="_blank" class="social_icons social_gpl">
-                                    <span class="icon-gpl"></span>
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="sc_team_item_info">
-                          <h3 class="sc_team_item_title">
-                          <a href="#">Daniel Green</a>
-                          </h3>
-                          <div class="sc_team_item_position">Bartender</div>
-                        </div>
-                      </div>
-                    </div><div class="column-1_3 column_padding_bottom">
-                      <div class="sc_team_item sc_team_item_2 even">
-                        <div class="sc_team_item_avatar">
-                          <img alt="Tonny Wisper" src="images/team1-740x856.jpg">
-                          <div class="sc_team_item_hover">
-                            <div class="sc_team_item_socials">
-                              <div class="sc_socials sc_socials_type_icons sc_socials_shape_square sc_socials_size_tiny">
-                                <div class="sc_socials_item">
-                                  <a href="#" target="_blank" class="social_icons social_facebook">
-                                    <span class="icon-facebook"></span>
-                                  </a>
-                                </div><div class="sc_socials_item">
-                                  <a href="#" target="_blank" class="social_icons social_instagramm">
-                                    <span class="icon-instagramm"></span>
-                                  </a>
-                                </div><div class="sc_socials_item">
-                                  <a href="#" target="_blank" class="social_icons social_gpl">
-                                    <span class="icon-gpl"></span>
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="sc_team_item_info">
-                          <h3 class="sc_team_item_title">
-                          <a href="#">Tonny Wisper</a>
-                          </h3>
-                          <div class="sc_team_item_position">Bartender</div>
-                        </div>
-                      </div>
-                    </div><div class="column-1_3 column_padding_bottom">
-                      <div class="sc_team_item sc_team_item_3 odd">
-                        <div class="sc_team_item_avatar">
-                          <img alt="Valentino Lucci" src="images/team3-740x856.jpg">
-                          <div class="sc_team_item_hover">
-                            <div class="sc_team_item_socials">
-                              <div class="sc_socials sc_socials_type_icons sc_socials_shape_square sc_socials_size_tiny">
-                                <div class="sc_socials_item">
-                                  <a href="#" target="_blank" class="social_icons social_facebook">
-                                    <span class="icon-facebook"></span>
-                                  </a>
-                                </div><div class="sc_socials_item">
-                                  <a href="#" target="_blank" class="social_icons social_instagramm">
-                                    <span class="icon-instagramm"></span>
-                                  </a>
-                                </div><div class="sc_socials_item">
-                                  <a href="#" target="_blank" class="social_icons social_gpl">
-                                    <span class="icon-gpl"></span>
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="sc_team_item_info">
-                          <h3 class="sc_team_item_title">
-                          <a href="#">Valentino Lucci</a>
-                          </h3>
-                          <div class="sc_team_item_position">Bartender</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section> --}}
 
           <section class="bg_image_14">
             <div class="container">

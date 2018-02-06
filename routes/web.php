@@ -22,6 +22,10 @@ Route::get('/posts/show/{slug}', [
 	'as'=>'/posts/show',
 	'uses'=>'WelcomeController@showposts'
 ]);
+Route::get('/recipe/{id}', [
+	'as'=>'/recipe',
+	'uses'=>'ProductController@recipe'
+]);
 Route::get('/promotions', [
 	'as'=>'/promotions',
 	'uses'=>'WelcomeController@promotions'
@@ -29,6 +33,10 @@ Route::get('/promotions', [
 Route::get('/contact', [
 	'as'=>'/contact',
 	'uses'=>'WelcomeController@contact'
+]);
+Route::get('/about', [
+	'as'=>'/about',
+	'uses'=>'WelcomeController@about'
 ]);
 Route::get('/promotions/show/{id}', [
 	'as'=>'/promotions/show',

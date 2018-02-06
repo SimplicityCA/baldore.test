@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Recipe;
 use App\Type;
 use App\Package;
 use Zofe\Rapyd\DataEdit\DataEdit;
@@ -15,7 +16,7 @@ class ProductController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['show']]);
+        $this->middleware('auth', ['except' => ['show','recipe']]);
     }
 
         
@@ -29,6 +30,10 @@ class ProductController extends Controller
         $product= Product::where('slug',$slug)->where('active',1)->first();
         View::share('background_product',$product->background);
         return view('products.view', compact('product'));
+    }
+    public function recipe($id){
+        $post= Recipe::find($id);
+        return view('products.recipe', compact('post'));
     }
     public function index()
     {
