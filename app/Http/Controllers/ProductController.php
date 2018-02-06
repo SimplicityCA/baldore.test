@@ -9,19 +9,27 @@ use App\Package;
 use Zofe\Rapyd\DataEdit\DataEdit;
 use Zofe\Rapyd\DataGrid\DataGrid;
 use Validator;
+use Illuminate\Support\Facades\View;
 
 class ProductController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth', ['except' => ['show']]);
     }
+
+        
 
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+    public function show($slug){
+        $product= Product::where('slug',$slug)->where('active',1)->first();
+        View::share('background_product',$product->background);
+        return view('products.view', compact('product'));
+    }
     public function index()
     {
         $filter = \DataFilter::source(Product::with('type','package'));

@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
+<?php 
+use App\Product;
+$products=Product::where('active',1)->get();
+ ?>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -44,7 +48,7 @@
                             </div>
                             <div class="contact_logo">
                                 <div class="logo">
-                                    <a href="index.html">
+                                    <a href="/">
                                         <img src="images/logo.png" class="logo_main" alt="" >
                                     <img src="images/logo.png" class="logo_fixed" alt="" ></a>
                                 </div>
@@ -63,13 +67,13 @@
               <div class="pushy_inner">
                 <a href="#" class="close-pushy"></a>
                 <div class="logo">
-                  <a href="index.html">
+                  <a href="/">
                     <img src="images/logo.png" class="logo_side" alt="" width="132" height="54">
                   </a>
                 </div>
                 <ul id="menu_pushy" class="menu_pushy_nav">
                   <li class="menu-item">
-                    <a href="#">Home</a>
+                    <a href="/">Home</a>
                   </li>
                   <li class="menu-item">
                     <a href="#">Empresa</a>
@@ -77,19 +81,21 @@
                   <li class="menu-item menu-item-has-children ">
                     <a href="#">Productos</a>
                     <ul class="sub-menu">
+                      @foreach($products as $product)
                       <li class="menu-item menu-item-object-page ">
-                        <a href="about-us-about-us.html">About us</a>
+                        <a href="/products/{{$product->slug}}">{{$product->title}}</a>
                       </li>
+                      @endforeach
                     </ul>
                   </li>
                   <li class="menu-item">
-                    <a href="#">Noticias</a>
+                    <a href="/posts">Noticias</a>
                   </li>
                   <li class="menu-item menu-item-object-page ">
-                    <a href="menu.html">Promociones</a>
+                    <a href="/promotions">Promociones</a>
                   </li>
                   <li class="menu-item menu-item-object-page ">
-                    <a href="contacts.html">Contáctenos</a>
+                    <a href="/contact">Contáctenos</a>
                   </li>
                 </ul>
               </div>

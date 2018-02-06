@@ -123,7 +123,7 @@
                       <div class="sc_services_item sc_services_item_3 odd">
                         <div class="sc_services_item_featured post_featured">
                           <div class="post_thumb" data-image="images/products/containers/{{$product->container}}" data-title="{{$product->title}}">
-                            <a class="hover_icon hover_icon_link" href="product/{{$product->slug}}">
+                            <a class="hover_icon hover_icon_link" href="products/{{$product->slug}}">
                               <img alt="Cozy Interior" src="images/products/containers/{{$product->container}}">
                             </a>
                           </div>
