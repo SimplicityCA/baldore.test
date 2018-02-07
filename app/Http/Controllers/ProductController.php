@@ -76,6 +76,9 @@ class ProductController extends Controller
             'grade' => 'required',
             'components' => 'required',
             'suggestion' => 'required',
+            'slug' => 'required',
+            'container' => 'required_if:create,1',
+            'background' => 'required_if:create,1',
         ], [
             'title.required' => 'El título del producto es requerido',
             'description.required' => 'La descripción es requerida',
@@ -84,6 +87,9 @@ class ProductController extends Controller
             'grade.required' => 'El grado es requerido',
             'components.required' => 'Los componentes son requeridos',
             'suggestion.required' => 'La sugerencia es requerida',
+            'slug.required' => 'El slug del producto es requerido',
+            'container.required_if' => 'La imagen es requerida',
+            'background.required_if' => 'La imagen es requerida',
         ]);
         if ($request->isMethod('post') || $request->isMethod('patch')) {
             $create->validator = $validator;
@@ -94,12 +100,14 @@ class ProductController extends Controller
           case 'create':
             $create->set('created_at', date_create('now UTC'));
             $title= "Nuevo Producto";
+            $create->add('create', '', 'hidden')->insertValue(1);
             if($create->action == 'delete'){
               $title= "Eliminar Producto";   
             }
             break;
           case 'modify':
             $title= "Actualizar Producto";
+            $create->add('create', '', 'hidden')->insertValue(0);
             break;
           case 'show':
             $title= "Información de Producto";
@@ -116,7 +124,12 @@ class ProductController extends Controller
         $create->add('grade','Grado','text');
         $create->add('components','Componentes','text');
         $create->add('suggestion','Sugerencia','text');
+        $create->add('slug','Slug','text');
 
+        $create->add('container','Imagen Contenedor', 'image')->move('images/products/containers/')->preview(180,180);
+        $create->add('background','Imagen Fondo', 'image')->move('images/products/backgrounds/')->preview(180,180);
+        $statusList = array("1"=>"Activo", "0"=>"Inactivo");
+        $create->add('active','Estado', 'select')->options($statusList);
 
         if($create->action!='idle'){
           $create->saved(function () use ($create) {

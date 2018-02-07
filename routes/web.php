@@ -147,3 +147,10 @@ Route::any('admin/types/create/{one?}/{two?}/{three?}/{four?}/{five?}',[
 'uses'=>'TypeController@create'
 ]);
 
+//HOME PICTURES
+Route::get('admin/homepictures', 'HomePictureController@index')->name('admin.homepictures.index');
+Route::any('admin/homepictures/create/{one?}/{two?}/{three?}/{four?}/{five?}',[
+'as'=>'homepictures/create',
+'uses'=>'HomePictureController@create'
+]);
+

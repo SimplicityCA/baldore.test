@@ -123,6 +123,13 @@
                           <li><a href="{{ url('admin/types/create') }}">Agregar Tipo de Producto</a></li>
                         </ul>
                       </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Imágenes del Home<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="{{ url('admin/homepictures/') }}">Ver Imágenes del Home</a></li>
+                          <li><a href="{{ url('admin/homepictures/create') }}">Agregar Imagen del Home</a></li>
+                        </ul>
+                      </li>
                     </ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">

@@ -54,11 +54,13 @@ class PostController extends Controller
       $create = DataEdit::source(new Post());
       $validator = Validator::make($request->all(), [
           'title' => 'required',
+          'subtitle' => 'required',
           'body' => 'required',
           'picture' => 'required_if:create,1',
           'slug' => 'required',
       ], [
           'title.required' => 'El título es requerido',
+          'subtitle.required' => 'El subtítulo es requerido',
           'body.required' => 'El cuerpo de la noticia es requerido',
           'picture.required_if' => 'La imagen es requerida',
           'slug.required' => 'El slug es requerido',
@@ -91,8 +93,9 @@ class PostController extends Controller
       }
 
       $create->add('title','Título','text');
+      $create->add('subtitle','Subtítulo','text');
       $create->add('body','Cuerpo', 'textarea');
-      $create->add('picture','Imagen', 'image')->move('img/posts/')->preview(180,180);
+      $create->add('picture','Imagen', 'image')->move('images/posts/')->preview(180,180);
       $create->add('slug','Slug','text');
 
       

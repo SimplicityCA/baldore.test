@@ -3,13 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\HomePicture;
 use Zofe\Rapyd\DataEdit\DataEdit;
 use Zofe\Rapyd\DataGrid\DataGrid;
-use App\Picture;
-use App\Product;
 use Validator;
 
-class PictureController extends Controller
+class HomePictureController extends Controller
 {
     public function __construct()
     {
@@ -22,7 +21,7 @@ class PictureController extends Controller
      */
     public function index()
     {
-        $filter = \DataFilter::source(Picture::with('product'));
+        $filter = \DataFilter::source(new HomePicture());
         $error = "";
 
         $filter->text('src','Buscar')->scope('search');
@@ -32,16 +31,16 @@ class PictureController extends Controller
         $filter->build();
 
         $grid = DataGrid::source($filter);
-        $grid->add('name','Nombre Imagen', true);
+        $grid->add('message1','Texto 1', true);
+        $grid->add('message2','Texto 2', true);
         
-        $grid->add('{{ $product->title }}','Producto', true);
-        $grid->edit('/admin/pictures/create', 'Acciones','show|modify|delete');
-        $grid->link('/admin/pictures/create',"Nueva Imagen", "TR");
+        $grid->edit('/admin/homepictures/create', 'Acciones','show|modify|delete');
+        $grid->link('/admin/homepictures/create',"Nueva Imagen", "TR");
 
         $grid->orderBy('id','desc');
         $grid->paginate(10);
 
-        return view('admin.pictures.index', compact('filter', 'grid','error'));
+        return view('admin.homepictures.index', compact('filter', 'grid','error'));
     }
 
     /**
@@ -51,15 +50,15 @@ class PictureController extends Controller
      */
     public function create(Request $request)
     {
-        $create = DataEdit::source(new Picture());
+        $create = DataEdit::source(new HomePicture());
         $validator = Validator::make($request->all(), [
-            'name' => 'required',
-            'description' => 'required_if:create,1',
-            'product_id' => 'required',
+            'path' => 'required_if:create,1',
+            'message1' => 'required',
+            'message2' => 'required',
         ], [
-            'name.required' => 'El nombre de la imagen es requerida',
-            'description.required_if' => 'La imagen es requerida',
-            'product_id.required' => 'El producto requerido',
+            'message1.required' => 'El mensaje es requerido',
+            'path.required_if' => 'La imagen es requerida',
+            'message2.required' => 'El mensaje es requerido',
         ]);
         if ($request->isMethod('post') || $request->isMethod('patch')) {
             $create->validator = $validator;
@@ -69,28 +68,28 @@ class PictureController extends Controller
         switch ($create->status) {
           case 'create':
             $create->set('created_at', date_create('now UTC'));
-            $title= "Nueva Imagen";
+            $title= "Nueva Imagen del Home";
             $create->add('create', '', 'hidden')->insertValue(1);
             if($create->action == 'delete'){
-              $title= "Eliminar Imagen";   
+              $title= "Eliminar Imagen del Home";   
             }
             break;
           case 'modify':
-            $title= "Actualizar Imagen";
+            $title= "Actualizar Imagen del Home";
             $create->add('create', '', 'hidden')->insertValue(0);
             break;
           case 'show':
-            $title= "Información de Imagen";
+            $title= "Información de Imagen del Home";
             break;
           case 'delete':
-            $title= "Eliminar Imagen";
+            $title= "Eliminar Imagen del Home";
             break;
         }
         
-        $create->add('name','Nombre','text');
-        $create->add('product_id','Producto','select')->options(Product::pluck('title', 'id')->all());
-        $create->add('description','Imagen', 'image')->move('images/products/')->preview(180,180);
-
+        $create->add('message1','Texto 1','text');
+        $create->add('message2','Texto 2','text');
+        $create->add('path','Imagen', 'image')->move('images/')->preview(180,180);
+        $create->add('link','Link','text');
         if($create->action!='idle'){
           $create->saved(function () use ($create) {
             switch ($create->action) {
@@ -104,7 +103,7 @@ class PictureController extends Controller
                 $create->message("Registro eliminado correctamente");
                 break;
             }
-            $create->link("admin/pictures", "Imágenes", "TR");
+            $create->link("admin/homepictures", "Imágenes del Home", "TR");
           });  
         }
         
