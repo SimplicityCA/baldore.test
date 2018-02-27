@@ -140,7 +140,7 @@
               <div class="sc_section">
                 <div class="sc_section_inner">
                   <h5 class="sc_title sc_align_left margin_top_small margin_bottom_tiny">Últimas</h5>
-                  <h1 class="sc_title sc_align_left margin_top_null margin_bottom_null">Recetas</h1>
+                  <h2 class="sc_title sc_align_left margin_top_null margin_bottom_null">Recetas</h2><br>
                   <div class="sc_tabs sc_tabs_style_1 margin_top_large- title_position_right" data-active="0">
                     <ul class="sc_tabs_titles">
                       @foreach($products as $k => $product)
@@ -198,16 +198,6 @@
                     </div>
                     @endforeach
                   </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section>
-            <div class="container">
-              <div class="sc_section margin_top_small alignleft">
-                <div class="sc_section_inner">
-                  <a href="#" class="sc_button sc_button_square sc_button_style_filled sc_button_size_small">Ver Más</a>
                 </div>
               </div>
             </div>
