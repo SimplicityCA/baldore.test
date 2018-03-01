@@ -125,6 +125,10 @@ class ProductController extends Controller
         $create->add('components','Componentes','text');
         $create->add('suggestion','Sugerencia','text');
         $create->add('slug','Slug','text');
+        $create->add('facebook','URL Facebook','text');
+        $create->add('twitter','URL Twitter','text');
+        $create->add('instagram','URL Instagram','text');
+        $create->add('pinterest','URL Pinterest','text');
 
         $create->add('container','Imagen Contenedor', 'image')->move('images/products/containers/')->preview(180,180);
         $create->add('background','Imagen Fondo', 'image')->move('images/products/backgrounds/')->preview(180,180);

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Promotion;
+use App\Product;
 use Zofe\Rapyd\DataEdit\DataEdit;
 use Zofe\Rapyd\DataGrid\DataGrid;
 use Validator;
@@ -60,10 +61,14 @@ class PromotionController extends Controller
           'title' => 'required',
           'body' => 'required',
           'picture' => 'required_if:create,1',
+          'valid_from' => 'required',
+          'valid_to' => 'required',
       ], [
           'title.required' => 'El título es requerido',
           'body.required' => 'El cuerpo de la noticia es requerido',
           'picture.required_if' => 'La imagen es requerida',
+          'valid_from.required' => 'La fecha es requerida',
+          'valid_to.required' => 'La fecha es requerida',
           
       ]);
       if ($request->isMethod('post') || $request->isMethod('patch')) {
@@ -93,6 +98,10 @@ class PromotionController extends Controller
       }
 
       $create->add('title','Título','text');
+      $create->add('body','Cuerpo', 'textarea');
+      $create->add('product_id','Producto','select')->options(Product::pluck('title', 'id')->all());
+      $create->add('valid_from','Valida desde', 'date');
+      $create->add('valid_to','Valida hasta', 'date');
       $create->add('body','Cuerpo', 'textarea');
       $create->add('picture','Imagen', 'image')->move('img/promotions/')->preview(180,180);
 
