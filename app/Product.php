@@ -21,6 +21,10 @@ class Product extends Model
         return $this->hasMany('App\Picture');
   }
 
+  public function promotions() {
+        return $this->hasMany('App\Promotion')->orderBy('valid_from', 'desc');
+  }
+
   protected $fillable = [
       'type_id', 'package_id', 'title', 'description', 'grade', 'components', 'suggestion'
   ];

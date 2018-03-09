@@ -28,6 +28,13 @@ class ProductController extends Controller
      */
     public function show($slug){
         $product= Product::where('slug',$slug)->where('active',1)->first();
+        $social =['facebook' => $product->facebook,
+          'facebook' => $product->facebook,
+          'twitter' => $product->twitter,
+          'instagramm' => $product->instagram,
+          'pinterest-circled' => $product->pinterest
+         ];
+         View::share('social',$social);
         View::share('background_product',$product->background);
         return view('products.view', compact('product'));
     }

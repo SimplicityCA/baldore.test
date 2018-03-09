@@ -216,13 +216,14 @@
                           <div class="sc_events sc_events_style_events-2  margin_bottom_larges">
                             <div class="sc_columns columns_wrap">
                               @foreach($promotions as $promotion)
+                                <?php  ?>
                                 <div class="sc_events_item sc_events_item_1 odd first">
                                   <span class="sc_events_item_date">
-                                    <span class="sc_events_item_day">{{date('d',$promotion->creation_date)}}</span>
-                                    <span class="sc_events_item_month">{{date('F',$promotion->creation_date)}}</span>
+                                    <span class="sc_events_item_day">{{date('d',strtotime(str_replace('-','/', $promotion->valid_to)))}}</span>
+                                    <span class="sc_events_item_month">{{date('F',strtotime(str_replace('-','/', $promotion->valid_to)))}}</span>
                                   </span><h3 class="sc_events_item_title">
                                     <a href="#">{{$promotion->title}}</a>
-                                  </h3><span class="sc_events_item_time">{{date('H:i:s',$promotion->creation_date)}}</span><span class="sc_events_item_details">
+                                  </h3><span class="sc_events_item_time">{{date('H:i:s',strtotime(str_replace('-','/', $promotion->valid_to)))}}</span><span class="sc_events_item_details">
                                     <a class="sc_button sc_button_square sc_button_style_filled style_color_light" href="/promotions/show/{{$promotion->id}}">Ver Más</a>
                                   </span>
                                 </div>

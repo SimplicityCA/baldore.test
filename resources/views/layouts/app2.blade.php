@@ -45,11 +45,11 @@ if(isset($background_product)){
                 <div class="top_panel_wrap_inner top_panel_inner_style_8 top_panel_position_over">
                     <div class="top_panel_middle" >
                         <div class="content_wrap">
-                            <div class="contact_info">
+{{--                             <div class="contact_info">
                                 <address class="contact_address icon-location">
                                     Patate, Tunguragua<br>Ecuador
                                 </address>
-                            </div>
+                            </div> --}}
                             <div class="contact_logo">
                                 <div class="logo">
                                     <a href="/">
@@ -201,18 +201,17 @@ if(isset($background_product)){
                     Desarrollado Por
                     <a href="http://simplicityuniverse.com">Simplicity</a>
                   </div>
+                  @if(isset($social))
                   <div class="sc_socials sc_socials_type_icons sc_socials_shape_square sc_socials_size_tiny">
+                    @foreach($social as $key => $so)
                     <div class="sc_socials_item">
-                      <a href="#" target="_blank" class="social_icons social_facebook">
-                        <span class="icon-facebook"></span>
+                      <a href="{{$so}}" target="_blank" class="social_icons social_{{$key}}">
+                        <span class="icon-{{$key}}"></span>
                       </a>
                     </div>
-                    <div class="sc_socials_item">
-                      <a href="#" target="_blank" class="social_icons social_instagramm">
-                        <span class="icon-instagramm"></span>
-                      </a>
-                    </div>
+                    @endforeach
                   </div>
+                  @endif
                 </div>
               </div>
             </div>

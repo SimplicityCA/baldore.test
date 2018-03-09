@@ -56,7 +56,7 @@ body {
 }
 h1 {
   font-family: "Sancreek", cursive;
-  font-size: 3.889em;
+  font-size: 2.889em;
   line-height: 1.3em;
   font-weight: 400;
   margin-top: 0.5em;
@@ -64,7 +64,7 @@ h1 {
 }
 h2 {
   font-family: "Sancreek", cursive;
-  font-size: 1.667em;
+  font-size: 1.02em;
   line-height: 1.3em;
   font-weight: 400;
   margin-top: 0.7em;
@@ -3272,6 +3272,7 @@ textarea {
 }
 .scheme_original .pushy_inner {
   background-color: #252525;
+  overflow-y: auto;
 }
 .scheme_cyan .pushy_inner {
   background-color: #252525;

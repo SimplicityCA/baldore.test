@@ -24,7 +24,7 @@ class WelcomeController extends Controller
     {
         $pictures=HomePicture::all();
         $products=Product::where('active',1)->get();
-        $promotions=Promotion::orderBy('created_at', 'desc')->get();
+        $promotions=Promotion::orderBy('valid_from', 'desc')->get();
         return view('welcome', compact('pictures','products','promotions'));
     }
     public function contact(){

@@ -41,11 +41,11 @@ $products=Product::where('active',1)->get();
                 <div class="top_panel_wrap_inner top_panel_inner_style_8 top_panel_position_over">
                     <div class="top_panel_middle" >
                         <div class="content_wrap">
-                            <div class="contact_info">
+{{--                             <div class="contact_info">
                                 <address class="contact_address icon-location">
                                     Patate, Tunguragua<br>Ecuador
                                 </address>
-                            </div>
+                            </div> --}}
                             <div class="contact_logo">
                                 <div class="logo">
                                     <a href="/">

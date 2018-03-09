@@ -2034,7 +2034,7 @@ li.opened > a > .open_child_menu:before {
 	-webkit-box-sizing: border-box;
 	   -moz-box-sizing: border-box;
 	        box-sizing: border-box;
-    border: 8px solid;
+    /*border: 8px solid;*/
     position: relative;
 }
 .top_panel_over .top_panel_style_8:not(.top_panel_title) .content_wrap {
@@ -2060,7 +2060,7 @@ li.opened > a > .open_child_menu:before {
     height: auto;
     width: auto;
     z-index: 1;
-    border: 8px solid;
+    /*border: 8px solid;*/
 }
 .top_panel_over .header_style_6 .slider_wrap .slotholder:after {
     position: absolute;
@@ -5148,7 +5148,7 @@ blockquote.sc_quote_style2 cite {
 
 /* Footer widgets */
 .footer_wrap_inner {
-	padding: 5.75em 0 1em;
+	padding: 2.75em 0 0;
     border-top: 10px solid;
     text-align: center;
 }
@@ -5177,7 +5177,7 @@ blockquote.sc_quote_style2 cite {
 }
 .footer_wrap + .contacts_wrap .contacts_wrap_inner {
     border-top: 0;
-    padding:0.8em 0;
+    padding:0 0;
 }
 .contacts_wrap .logo {
 	text-align:center;
@@ -5188,6 +5188,7 @@ blockquote.sc_quote_style2 cite {
 .contacts_wrap .logo img {
 	vertical-align:middle;
 	display:inline-block;
+	width: 80px;
 }
 .contacts_wrap .contacts_address {
 	overflow:hidden;
@@ -5240,7 +5241,7 @@ footer.twitter_wrap .sc_section_overlay {
 .copyright_style_socials .copyright_text {
     text-align: center;
     width: 100%;
-    margin-bottom: 2.4em;
+    margin-bottom: 0.5em;
 }
 .copyright_style_socials .sc_socials,
 .copyright_style_menu .menu_footer_nav {
