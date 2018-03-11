@@ -217,4 +217,40 @@
               </div>
             </div>
             </section>
+            <section class="spv5rem">
+                <div class="container">
+                  <div class="sc_form_wrap">
+                    <div class="sc_form sc_form_style_form_1 contact_form_main aligncenter mw470">
+                        <h5 class="sc_form_subtitle sc_item_subtitle">¿Tienes una receta para {{$product->title}}?</h5>
+                        <h1 class="sc_form_title">Ingrésala</h1>
+                        <form method="post" action="include/contact-form.php">
+                            <div class="sc_form_info">
+                          <div class="sc_form_item sc_form_field label_over">
+                            <label class="required" for="sc_form_username">Nombre</label>
+                                    <input type="text" name="name" id="sc_form_username" placeholder="Nombre *">
+                                </div>
+                                <div class="sc_form_item sc_form_field label_over">
+                            <label class="required" for="sc_form_email">E-mail</label>
+                                    <input type="text" name="email" id="sc_form_email" placeholder="Email *">
+                                </div>
+                                <div class="sc_form_item sc_form_field label_over">
+                            <label class="required" for="sc_form_subj">Asunto</label>
+                                    <input type="file" name="subject" id="sc_form_subj" placeholder="Imagen"/>
+                                </div>
+                            </div>
+                        <div class="sc_form_item sc_form_message label_over">
+                          <label class="required" for="sc_form_message">Receta</label>
+                                  <textarea  id="sc_form_message" class="textAreaSize" name="message" placeholder="Receta *"></textarea>
+                              </div>
+                        <div class="sc_contact_form_button">
+                          <div class="sc_form_item sc_form_button">
+                            <button type="submit" name="contact_submit" class="sc_form_button">Enviar</button>
+                          </div>
+                        </div>
+                            <div class="result sc_infobox"></div>
+                        </form>
+                    </div>
+                  </div>
+                </div>
+              </section>
 @endsection

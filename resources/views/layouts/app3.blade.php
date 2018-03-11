@@ -36,32 +36,6 @@ if(isset($background_product)){
     
     <link rel="stylesheet" type="text/css" media="all" href="/css/skin.css" />
     <link rel="stylesheet" type="text/css" media="all" href="/css/responsive.css" />
-    <script type="text/javascript">
-      function getCookie(cname) {
-        var name = cname + "=";
-        var decodedCookie = decodeURIComponent(document.cookie);
-        var ca = decodedCookie.split(';');
-        for(var i = 0; i <ca.length; i++) {
-            var c = ca[i];
-            while (c.charAt(0) == ' ') {
-                c = c.substring(1);
-            }
-            if (c.indexOf(name) == 0) {
-                return c.substring(name.length, c.length);
-            }
-        }
-        return "";
-      }
-      function setCookie(cname, cvalue, exdays) {
-        var d = new Date();
-        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-        var expires = "expires="+d.toUTCString();
-        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-      }
-      if(getCookie('birthday')==0){
-          window.location.replace("/landing");
-      }
-    </script>
 </head>
 <body class="page body_filled article_style_stretch scheme_original top_panel_above sidebar_hide">
     <div id="app" class="body_wrap header_style_8">
@@ -83,7 +57,7 @@ if(isset($background_product)){
                                     <img src="/images/logo.png" class="logo_fixed" alt="" ></a>
                                 </div>
                             </div>
-                            <div class="menu_pushy_wrap clearfix">
+                            <div style="visibility:hidden;" class="menu_pushy_wrap clearfix">
                                 <a href="#" class="menu_pushy_button">
                                     MENU
                                     <span class=" icon-menu"></span>

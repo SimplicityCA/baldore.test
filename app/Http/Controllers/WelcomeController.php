@@ -27,6 +27,9 @@ class WelcomeController extends Controller
         $promotions=Promotion::orderBy('valid_from', 'desc')->get();
         return view('welcome', compact('pictures','products','promotions'));
     }
+    public function landing () {
+        return view('landing');
+    }
     public function contact(){
        return view('contacts'); 
     }

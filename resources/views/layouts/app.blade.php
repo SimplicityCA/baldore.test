@@ -32,6 +32,32 @@ $products=Product::where('active',1)->get();
     
     <link rel="stylesheet" type="text/css" media="all" href="css/skin.css" />
     <link rel="stylesheet" type="text/css" media="all" href="css/responsive.css" />
+    <script type="text/javascript">
+    function getCookie(cname) {
+      var name = cname + "=";
+      var decodedCookie = decodeURIComponent(document.cookie);
+      var ca = decodedCookie.split(';');
+      for(var i = 0; i <ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0) == ' ') {
+              c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+              return c.substring(name.length, c.length);
+          }
+      }
+      return "";
+    }
+    function setCookie(cname, cvalue, exdays) {
+      var d = new Date();
+      d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+      var expires = "expires="+d.toUTCString();
+      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+    if(getCookie('birthday')==0){
+        window.location.replace("/landing");
+    }
+  </script>
 </head>
 <body class="home page body_filled article_style_stretch scheme_original top_panel_over sidebar_hide">
     <div id="app" class="body_wrap header_style_8">
@@ -240,5 +266,6 @@ $products=Product::where('active',1)->get();
     <script type="text/javascript" src="js/vendor/revslider/public/assets/js/extensions/revolution.extension.slideanims.min.js"></script>
       <script type="text/javascript" src="js/vendor/isotope.pkgd.min.js"></script>
   <script type="text/javascript" src="js/vendor/prettyphoto/jquery.prettyPhoto.min.js"></script>
+  @yield('scripts')
 </body>
 </html>

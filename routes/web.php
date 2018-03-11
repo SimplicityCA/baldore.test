@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'WelcomeController@index')->name('index');
-
+Route::get('/landing', 'WelcomeController@landing')->name('landing');
 Auth::routes();
 Route::get('/posts', [
 	'as'=>'/posts',
