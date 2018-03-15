@@ -49,6 +49,9 @@
                               </div>
                             </div>
                           </div>
+                          <div class="mbn_ne">
+                            <a onclick="print()" href="javascript:void(0)">Imprimir<span style="padding-left: 10px;" class="icon-print" ></span></a>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -253,4 +256,9 @@
                   </div>
                 </div>
               </section>
+              <script type="text/javascript">
+                  print(){
+                    window.print();
+                  }
+              </script>
 @endsection

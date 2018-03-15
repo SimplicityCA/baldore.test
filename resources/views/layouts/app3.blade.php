@@ -179,7 +179,7 @@ if(isset($background_product)){
             </footer>
 
 
-            <footer class="contacts_wrap scheme_original show-footer-border-no">
+{{--             <footer class="contacts_wrap scheme_original show-footer-border-no">
               <div class="contacts_wrap_inner">
                 <div class="content_wrap">
                   <div class="logo">
@@ -189,7 +189,7 @@ if(isset($background_product)){
                   </div>
                 </div>
               </div>
-            </footer> 
+            </footer>  --}}
         
             <div class="copyright_wrap copyright_style_socials scheme_original">
               <div class="copyright_wrap_inner">

@@ -5,20 +5,18 @@
                 <div class="container">
                   <div class="sc_form_wrap">
                     <div class="sc_form sc_form_style_form_1 contact_form_main aligncenter mw470">
-                        <h5 class="sc_form_subtitle sc_item_subtitle">Escoge tu Fecha de Nacimiento?</h5>
+                        <h5 class="sc_form_subtitle sc_item_subtitle">¿Es usted mayor de edad?</h5>
                             <div class="sc_form_info">
                           <div class="sc_form_item sc_form_field label_over">
-                            <label class="required" for="sc_form_username">Nombre</label>
-                                    <input type="number" name="day" id="day" placeholder="DD">
-                                </div>
-                                <div class="sc_form_item sc_form_field label_over">
-                            <label class="required" for="sc_form_email">E-mail</label>
-                                    <input type="number" name="month" id="month" placeholder="MM">
-                                </div>
-                                <div class="sc_form_item sc_form_field label_over">
-                            <label class="required" for="sc_form_subj">Asunto</label>
-                                    <input type="number" name="year" id="year" placeholder="AAAA">
-                                </div>
+                            <label class="container-radio">NO
+                              <input name="grown" value="0" type="radio">
+                              <span class="checkmark"></span>
+                            </label>
+                            <label class="container-radio">SI
+                              <input name="grown" value="1" type="radio">
+                              <span class="checkmark"></span>
+                            </label>
+                          </div>
                             </div>
                         <div class="sc_contact_form_button">
                           <div class="sc_form_item sc_form_button">
@@ -54,21 +52,26 @@
       var expires = "expires="+d.toUTCString();
       document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
     }
-    function isDate18orMoreYearsOld(day, month, year) {
-      console.log(year+18);
-      console.log(Date(year+18, month, day));
-      return new Date(year+18, month, day) <= new Date();
-    }
+
     function validate(){
-      var day = parseInt(document.getElementById("day").value);
-      var month = parseInt(document.getElementById("month").value);
-      var year = parseInt(document.getElementById("year").value);
-      if(isDate18orMoreYearsOld(day, month, year)){
-        setCookie('birthday', 1, 2);
-        window.location.replace("/");
-      }else{
-        alert('No es mayor de edad.');
+      var radios = document.getElementsByName('grown');
+
+      for (var i = 0, length = radios.length; i < length; i++)
+      {
+       if (radios[i].checked)
+       {
+        if(radios[i].value==1){
+          setCookie('birthday', 1, 2);
+          window.location.replace("/");
+        }else{
+          alert('No es mayor de edad. No puede acceder.');
+        }
+
+        // only one radio can be logically checked, don't check the rest
+        break;
+       }
       }
+
     }
     
 
