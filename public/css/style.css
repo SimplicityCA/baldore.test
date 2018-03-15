@@ -5228,7 +5228,7 @@ footer.twitter_wrap .sc_section_overlay {
 
 /* Copyright area */
 .copyright_wrap_inner {
-	padding: 0.8em 0 2em;
+	/*padding: 0.8em 0 2em;*/
 	overflow:hidden;
 }
 .copyright_wrap p {
@@ -5249,7 +5249,7 @@ footer.twitter_wrap .sc_section_overlay {
     width: 100%;
 }
 .copyright_style_socials .copyright_wrap_inner {
-	padding-bottom: 4.3em;
+	/*padding-bottom: 4.3em;*/
 }
 .copyright_style_menu .menu_footer_nav {
 	margin:0;
