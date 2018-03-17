@@ -20,13 +20,16 @@
                             </div>
                         <div class="sc_contact_form_button">
                           <div class="sc_form_item sc_form_button">
-                            <button onclick="validate()" name="contact_submit" class="sc_form_button">Enviar</button>
+                            <button onclick="validate()" name="contact_submit" class="sc_form_button">Ingresar</button>
                           </div>
                         </div>
                             <div class="result sc_infobox"></div>
                     </div>
                   </div>
                 </div>
+                <span>
+                  Advertencia. El consumo excesivo de alcohol limita su capacidad de conducir y operar maquinarias, puede causar daños en su salud y perjudica a su familia”. “Ministerio de Salud Pública del Ecuador”. “Venta prohibida a menores de 18 años.
+                </span>
               </section>
 @endsection
 <script>
