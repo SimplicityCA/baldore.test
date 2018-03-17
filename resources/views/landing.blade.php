@@ -26,10 +26,13 @@
                             <div class="result sc_infobox"></div>
                     </div>
                   </div>
+                  <div class="mbn_ne">
+                    <p style="text-align: center">
+                    Advertencia. El consumo excesivo de alcohol limita su capacidad de conducir y operar maquinarias, puede causar daños en su salud y perjudica a su familia”.<br> “Ministerio de Salud Pública del Ecuador”.<br> “Venta prohibida a menores de 18 años”.
+                    </p>
+                  </div>
                 </div>
-                <span>
-                  Advertencia. El consumo excesivo de alcohol limita su capacidad de conducir y operar maquinarias, puede causar daños en su salud y perjudica a su familia”. “Ministerio de Salud Pública del Ecuador”. “Venta prohibida a menores de 18 años.
-                </span>
+
               </section>
 @endsection
 <script>
