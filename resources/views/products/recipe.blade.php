@@ -28,7 +28,7 @@
 											<section class="post_featured">
 												
 													
-														<img alt="Image Post" src="/images/recipes/{{$post->picture}}">
+														<img alt="Image Post" src="/img/recipes/{{$post->picture}}">
 													
 											</section>
 											<section class="post_content">

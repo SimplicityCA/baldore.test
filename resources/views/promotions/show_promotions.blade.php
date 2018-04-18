@@ -27,7 +27,7 @@
 											</div>			
 											<section class="promotion_featured">
 												
-														<img alt="Image promotion" src="/images/promotions/{{$promotion->picture}}">
+														<img alt="Image promotion" src="/img/promotions/{{$promotion->picture}}">
 
 											</section>
 											<section class="promotion_content">

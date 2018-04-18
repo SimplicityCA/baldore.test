@@ -94,13 +94,13 @@
                               <li class="filterall eg-washington-wrapper eg-post-id-821" data-date="1455200294">
                                 <div class="esg-media-cover-wrapper">
                                   <div class="esg-entry-media">
-                                    <img style="background: black;" src="/images/products/{{$picture->name}}" alt="">
+                                    <img style="background: black;" src="/images/products/{{$picture->description}}" alt="">
                                   </div>
                                   <div class="esg-entry-cover esg-fade" data-delay="0">
                                     <div class="esg-overlay esg-fade eg-washington-container" data-delay="0">
                                     </div>
                                     <div class="esg-center eg-post-821 eg-washington-element-0-a esg-falldown" data-delay="0.1">
-                                      <a class="eg-washington-element-0 eg-post-821 esgbox" href="/images/products/{{$picture->name}}" lgtitle="{{$picture->description}}">
+                                      <a class="eg-washington-element-0 eg-post-821 esgbox" href="/images/products/{{$picture->description}}" lgtitle="{{$picture->name}}">
                                         <i class="eg-icon-search"></i>
                                       </a>
                                     </div>
