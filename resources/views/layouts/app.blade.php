@@ -184,7 +184,7 @@ $products=Product::where('active',1)->get();
                     </aside><aside class="widget_number_2 column-1_3 widget widget_text">
                       <h2 class="widget_title">Teléfonos</h2>
                       <div class="textwidget">
-                        +1(800)123-4567
+                        +593 (3) 287-0138
                       </div>
                     </aside><aside class="widget_number_3 column-1_3 widget widget_text">
                       <h2 class="widget_title">Ubicación</h2>
@@ -215,14 +215,14 @@ $products=Product::where('active',1)->get();
               <div class="copyright_wrap_inner">
                 <div class="content_wrap">
                   <div class="copyright_text">
-                    <a href="http://ancorathemes.com/">Baldore</a> © 2018 Todos los Derechos Reservados <a href="http://ancorathemes.com/">Términos</a> y <a href="#">Condiciones de uso</a>
+                    <a href="#">Baldore</a> © 2018 Todos los Derechos Reservados <a href="/content/2">Términos</a> y <a href="/content/3">Condiciones de uso</a>
                   </div>
                   <div class="copyright_text">
                     Desarrollado Por
                     <a href="http://simplicityuniverse.com">Simplicity</a>
                   </div>
                   <div class="sc_socials sc_socials_type_icons sc_socials_shape_square sc_socials_size_tiny">
-                    <div class="sc_socials_item">
+{{--                     <div class="sc_socials_item">
                       <a href="#" target="_blank" class="social_icons social_facebook">
                         <span class="icon-facebook"></span>
                       </a>
@@ -231,7 +231,7 @@ $products=Product::where('active',1)->get();
                       <a href="#" target="_blank" class="social_icons social_instagramm">
                         <span class="icon-instagramm"></span>
                       </a>
-                    </div>
+                    </div> --}}
                   </div>
                 </div>
               </div>

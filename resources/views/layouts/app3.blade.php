@@ -164,7 +164,7 @@ if(isset($background_product)){
                     </aside><aside class="widget_number_2 column-1_3 widget widget_text">
                       <h2 class="widget_title">Teléfonos</h2>
                       <div class="textwidget">
-                        +1(800)123-4567
+                        +593 (3) 287-0138
                       </div>
                     </aside><aside class="widget_number_3 column-1_3 widget widget_text">
                       <h2 class="widget_title">Ubicación</h2>
@@ -195,7 +195,7 @@ if(isset($background_product)){
               <div class="copyright_wrap_inner">
                 <div class="content_wrap">
                   <div class="copyright_text">
-                    <a href="http://ancorathemes.com/">Baldore</a> © 2018 Todos los Derechos Reservados <a href="http://ancorathemes.com/">Términos</a> y <a href="#">Condiciones de uso</a>
+                    <a href="#">Baldore</a> © 2018 Todos los Derechos Reservados <a href="/content/2">Términos</a> y <a href="/content/3">Condiciones de uso</a>
                   </div>
                   <div class="copyright_text">
                     Desarrollado Por

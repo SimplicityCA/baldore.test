@@ -3,7 +3,11 @@
 <div class="container">
 	<h1>{{$title}}</h1>
 	<div class="form-container">
+		@if($admin->id)
 		<form method="POST" action="/admin/users/create/{{$admin->id}}">
+		@else
+			<form method="POST" action="/admin/users/create">
+		@endif;
 			{{ csrf_field() }}	
 			@include ('admin.errors')
 			<div class="row">

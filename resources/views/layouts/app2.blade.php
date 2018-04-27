@@ -79,8 +79,8 @@ if(isset($background_product)){
                             <div class="contact_logo">
                                 <div class="logo">
                                     <a href="/">
-                                        <img src="/images/logo.png" class="logo_main" alt="" >
-                                    <img src="/images/logo.png" class="logo_fixed" alt="" ></a>
+                                        {{-- <img src="/images/logo.png" class="logo_main" alt="" >
+                                    <img src="/images/logo.png" class="logo_fixed" alt="" ></a> --}}
                                 </div>
                             </div>
                             <div class="menu_pushy_wrap clearfix">
@@ -190,7 +190,7 @@ if(isset($background_product)){
                     </aside><aside class="widget_number_2 column-1_3 widget widget_text">
                       <h2 class="widget_title">Teléfonos</h2>
                       <div class="textwidget">
-                        +1(800)123-4567
+                        +593 (3) 287-0138
                       </div>
                     </aside><aside class="widget_number_3 column-1_3 widget widget_text">
                       <h2 class="widget_title">Ubicación</h2>
@@ -221,7 +221,7 @@ if(isset($background_product)){
               <div class="copyright_wrap_inner">
                 <div class="content_wrap">
                   <div class="copyright_text">
-                    <a href="http://ancorathemes.com/">Baldore</a> © 2018 Todos los Derechos Reservados <a href="http://ancorathemes.com/">Términos</a> y <a href="#">Condiciones de uso</a>
+                    <a href="#">Baldore</a> © 2018 Todos los Derechos Reservados <a href="/content/2">Términos</a> y <a href="/content/3">Condiciones de uso</a>
                   </div>
                   <div class="copyright_text">
                     Desarrollado Por
@@ -238,6 +238,12 @@ if(isset($background_product)){
                     @endforeach
                   </div>
                   @endif
+                  <p style="text-align: center">
+                     “Advertencia. El
+                    consumo excesivo de alcohol limita su capacidad de conducir y operar maquinarias, puede causar
+                    daños en su salud y perjudica a su familia”. “Ministerio de Salud Pública del Ecuador”. “Venta
+                    prohibida a menores de 18 años”. 
+                  </p>
                 </div>
               </div>
             </div>

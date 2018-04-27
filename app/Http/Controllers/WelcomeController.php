@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\HomePicture;
 use App\Product;
 use App\Post;
+use App\Content;
 use App\Promotion;
 class WelcomeController extends Controller
 {
@@ -46,6 +47,12 @@ class WelcomeController extends Controller
 
         $post=Post::where('slug',$slug)->first();
         return view('posts.show_post', compact('post'));
+    }
+
+    public function content($id){
+
+        $content=Content::where('id',$id)->first();
+        return view('content', compact('content'));
     }
 
     public function promotions(){

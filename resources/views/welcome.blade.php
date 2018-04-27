@@ -73,9 +73,9 @@
   </section>
   <div class="top_panel_title top_panel_style_8  breadcrumbs_present scheme_original">
     <div class="top_panel_title_inner top_panel_inner_style_8  breadcrumbs_present_inner">
-      <div class="content_wrap">
+{{--       <div class="content_wrap">
         <div class="breadcrumbs"></div>
-      </div>
+      </div> --}}
     </div>
   </div>
   <div class="page_content_wrap page_paddings_no">
@@ -84,7 +84,7 @@
       <article class="post_item post_item_single page">
         <div class="post_content">
 
-          <section class="spb75rem">
+{{--           <section class="spb75rem">
             <div class="container">
               <div class="columns_wrap sc_columns">
                 <div class="column-1_2 sc_column_item odd first">
@@ -106,7 +106,7 @@
                 </div>
               </div>
             </div>
-          </section>
+          </section> --}}
 
           <section class="bg_image_11 spt72rem spb6rem">
             <div class="container">
@@ -125,7 +125,7 @@
                             </a>
                           </div>
                         </div>
-                        <h2 class="sc_services_item_title">{{$product->title}}</h2>
+                        {{-- <h2 class="sc_services_item_title">{{$product->title}}</h2> --}}
                       </div>
                     </div>
                     @endforeach
@@ -218,12 +218,13 @@
                               @foreach($promotions as $promotion)
                                 <?php  ?>
                                 <div class="sc_events_item sc_events_item_1 odd first">
-                                  <span class="sc_events_item_date">
+    {{--                               <span class="sc_events_item_date">
                                     <span class="sc_events_item_day">{{date('d',strtotime(str_replace('-','/', $promotion->valid_to)))}}</span>
                                     <span class="sc_events_item_month">{{date('F',strtotime(str_replace('-','/', $promotion->valid_to)))}}</span>
-                                  </span><h3 class="sc_events_item_title">
-                                    <a href="#">{{$promotion->title}}</a>
-                                  </h3><span class="sc_events_item_time">{{date('H:i:s',strtotime(str_replace('-','/', $promotion->valid_to)))}}</span><span class="sc_events_item_details">
+                                  </span> --}}
+                                  <h3 class="sc_events_item_title">
+                                    <a href="/promotions/show/{{$promotion->id}}">{{$promotion->title}}</a>
+                                  </h3><span class="sc_events_item_time">{{-- {{date('H:i:s',strtotime(str_replace('-','/', $promotion->valid_to)))}} --}}</span><span class="sc_events_item_details">
                                     <a class="sc_button sc_button_square sc_button_style_filled style_color_light" href="/promotions/show/{{$promotion->id}}">Ver Más</a>
                                   </span>
                                 </div>
