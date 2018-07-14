@@ -1605,6 +1605,8 @@ button.sc_button_size_large,
     margin: auto;
     max-width: 770px;
     width: 100%;
+    max-height: 400px;
+    overflow-y: auto;
 }
 .sc_events_style_events-2 .sc_events_item {
 	border: 6px solid #eee;

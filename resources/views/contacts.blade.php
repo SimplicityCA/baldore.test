@@ -39,10 +39,9 @@
 												<div class="sc_section_inner">
 													<div class="sc_section_overlay">
 														<div class="sc_section_content padding_on">
-															<h2 class="sc_title sc_align_center white mb01em">Teléfonos</h2>
+															<h2 class="sc_title sc_align_center white mb01em">Teléfono</h2>
 															<div class="mbn_ne">
-																<p class="white">+1(800)123-4567<br />
-																+1(800)123-4566</p>
+																<p class="white">+593 (3) 287-0138</p>
 															</div>
 														</div>
 													</div>
